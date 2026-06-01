@@ -25,11 +25,11 @@
         }
         header h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 3.5em;
+            font-size: 5em;
             color: #ff8c00;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 10px rgba(255,140,0,0.4);
+            letter-spacing: 6px;
+            text-shadow: 3px 3px 15px rgba(255,140,0,0.6);
         }
         header p {
             margin: 10px 0 0;
@@ -81,8 +81,6 @@
             font-size: 1.2em;
         }
         .card p { color: #ccc; font-size: 0.95em; line-height: 1.6; }
-
-        /* БРЕНДИ */
         .brands {
             margin-bottom: 50px;
         }
@@ -107,6 +105,61 @@
             background: #ff8c00;
             color: #1a1a1a;
             transform: scale(1.05);
+        }
+
+        /* ФОТО ІНСТРУМЕНТІВ */
+        .tools-photos {
+            margin-bottom: 50px;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .tool-card {
+            background: #2d2d2d;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #444;
+            transition: transform 0.2s;
+        }
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,140,0,0.2);
+        }
+        .tool-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .tool-card p {
+            padding: 10px;
+            text-align: center;
+            color: #ff8c00;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.95em;
+        }
+
+        /* ФОТО МАГАЗИНУ */
+        .photos { margin-bottom: 50px; }
+        .photos-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .photo-placeholder {
+            background: #2d2d2d;
+            border: 2px dashed #ff8c00;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 250px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9em;
+            text-align: center;
         }
 
         /* КОНТАКТИ */
@@ -161,28 +214,12 @@
         }
         .btn-viber:hover { background: #5a4bd1; }
 
-        /* ФОТО МАГАЗИНУ */
-        .photos {
-            margin-bottom: 50px;
-        }
-        .photos-grid {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .photo-placeholder {
-            background: #2d2d2d;
-            border: 2px dashed #ff8c00;
+        /* КАРТА */
+        .map-section { margin-bottom: 50px; }
+        .map-container {
             border-radius: 8px;
-            flex: 1;
-            min-width: 250px;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.9em;
-            text-align: center;
+            overflow: hidden;
+            border: 2px solid #ff8c00;
         }
 
         footer {
@@ -193,12 +230,17 @@
             padding: 20px;
         }
         footer span { color: #ff8c00; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.8em; }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.png" alt="Файний Господар">
+    <img src="logo.jpg" alt="Файний Господар">
     <h1>Файний Господар</h1>
     <p>Магазин-сервіс інструментів • Самбір</p>
 </header>
@@ -226,6 +268,37 @@
         </div>
     </div>
 
+    <!-- КАРТИНКИ ІНСТРУМЕНТІВ -->
+    <div class="tools-photos">
+        <h2 class="section-title">⚙️ Наш інструмент</h2>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80" alt="Бензопила">
+                <p>Бензопили</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&q=80" alt="Дриль">
+                <p>Електроінструмент</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=400&q=80" alt="Інструменти">
+                <p>Витратний інструмент</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80" alt="Мотокоса">
+                <p>Мотокоси</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80" alt="Будівництво">
+                <p>Прокат обладнання</p>
+            </div>
+            <div class="tool-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Шуруповерт">
+                <p>Шуруповерти</p>
+            </div>
+        </div>
+    </div>
+
     <!-- БРЕНДИ -->
     <div class="brands">
         <h2 class="section-title">🏆 Наші бренди</h2>
@@ -246,15 +319,9 @@
     <div class="photos">
         <h2 class="section-title">📸 Наш магазин</h2>
         <div class="photos-grid">
-            <div class="photo-placeholder">
-                📷 Фото магазину<br>скоро буде
-            </div>
-            <div class="photo-placeholder">
-                📷 Фото магазину<br>скоро буде
-            </div>
-            <div class="photo-placeholder">
-                📷 Фото магазину<br>скоро буде
-            </div>
+            <div class="photo-placeholder">📷 Фото магазину<br>скоро буде</div>
+            <div class="photo-placeholder">📷 Фото магазину<br>скоро буде</div>
+            <div class="photo-placeholder">📷 Фото магазину<br>скоро буде</div>
         </div>
     </div>
 
@@ -267,6 +334,21 @@
         <div class="btn-wrap">
             <a href="tel:+380964502794" class="btn-call">📞 Зателефонувати</a>
             <a href="viber://chat?number=%2B380964502794" class="btn-viber">💬 Viber</a>
+        </div>
+    </div>
+
+    <!-- КАРТА -->
+    <div class="map-section">
+        <h2 class="section-title">📍 Як нас знайти</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps?q=Самбір,+Львівська+область,+Україна&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
         </div>
     </div>
 
