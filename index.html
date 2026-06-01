@@ -5,68 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Файний господар - Магазин інструментів</title>
     <style>
+        * { box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
+            background: #1a1a1a;
+            color: #fff;
         }
         header {
-            background: #2c7a2c;
-            color: white;
-            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            border-bottom: 3px solid #ff8c00;
+            padding: 30px 20px;
             text-align: center;
         }
-        header h1 { margin: 0; font-size: 2em; }
-        header p { margin: 5px 0 0; }
+        header img {
+            height: 150px;
+            display: block;
+            margin: 0 auto 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: #ff8c00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header p {
+            margin: 8px 0 0;
+            color: #aaa;
+            font-size: 1em;
+        }
         .container {
-            max-width: 900px;
-            margin: 30px auto;
+            max-width: 960px;
+            margin: 40px auto;
             padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            color: #ff8c00;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         .cards {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            margin: 20px 0;
+            margin: 20px 0 40px;
         }
         .card {
-            background: white;
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-top: 3px solid #ff8c00;
             border-radius: 8px;
             padding: 20px;
             flex: 1;
             min-width: 200px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .card h3 { color: #2c7a2c; margin-top: 0; }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255,140,0,0.3);
+        }
+        .card h3 {
+            color: #ff8c00;
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        .card p {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
         .contacts {
-            background: white;
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-left: 4px solid #ff8c00;
             border-radius: 8px;
-            padding: 20px;
+            padding: 30px;
             margin: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .contacts h2 { color: #2c7a2c; }
-        .contacts p { font-size: 1.1em; }
+        .contacts h2 {
+            color: #ff8c00;
+            margin-top: 0;
+        }
+        .contacts p {
+            font-size: 1.1em;
+            color: #ddd;
+            margin: 12px 0;
+        }
+        .contacts a {
+            color: #ff8c00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contacts a:hover { text-decoration: underline; }
+        .btn-contact {
+            display: inline-block;
+            background: #ff8c00;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .btn-contact:hover { background: #ffa500; }
         footer {
-            background: #2c7a2c;
-            color: white;
+            background: #111;
+            border-top: 3px solid #ff8c00;
+            color: #888;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
             margin-top: 40px;
         }
+        footer span { color: #ff8c00; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo.png" alt="Файний Господар"
-    style="height:120px; margin-bottom:10px; display:block; margin-left:auto; margin-right:auto;">
+    <img src="logo.png" alt="Файний Господар">
     <h1>Файний Господар</h1>
-    <p>Магазин інструментів • Самбір</p>
+    <p>Магазин-сервіс інструментів • Самбір</p>
 </header>
 
 <div class="container">
+
+    <h2 class="section-title">🔧 Наш асортимент</h2>
+
     <div class="cards">
         <div class="card">
             <h3>⛽ Бензоінструмент</h3>
@@ -91,3 +162,14 @@
         <p>📱 Телефон: <a href="tel:+380964502794">+38 096 450 2794</a></p>
         <p>📍 Місто: Самбір</p>
         <p>🕐 Графік роботи: 8:30 - 17:00</p>
+        <a href="tel:+380964502794" class="btn-contact">📞 Зателефонувати</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 <span>Файний Господар</span> • Самбір</p>
+</footer>
+
+</body>
+</html>
