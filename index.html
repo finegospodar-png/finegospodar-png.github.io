@@ -3,38 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Файний господар - Магазин інструментів</title>
+    <title>Файний Господар - Магазин інструментів</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Roboto', sans-serif;
             background: #1a1a1a;
             color: #fff;
         }
         header {
-            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-            border-bottom: 3px solid #ff8c00;
-            padding: 30px 20px;
+            background: linear-gradient(135deg, #111, #2d2d2d);
+            border-bottom: 4px solid #ff8c00;
+            padding: 40px 20px;
             text-align: center;
         }
         header img {
-            height: 150px;
+            height: 180px;
             display: block;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
         }
         header h1 {
-            margin: 0;
-            font-size: 2.2em;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5em;
             color: #ff8c00;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 10px rgba(255,140,0,0.4);
         }
         header p {
-            margin: 8px 0 0;
+            margin: 10px 0 0;
             color: #aaa;
-            font-size: 1em;
+            font-size: 1.1em;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
         .container {
             max-width: 960px;
@@ -42,18 +44,21 @@
             padding: 0 20px;
         }
         .section-title {
+            font-family: 'Oswald', sans-serif;
             text-align: center;
             color: #ff8c00;
-            font-size: 1.5em;
-            margin-bottom: 20px;
+            font-size: 1.8em;
+            margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
         }
         .cards {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
-            margin: 20px 0 40px;
+            margin-bottom: 50px;
         }
         .card {
             background: #2d2d2d;
@@ -70,58 +75,122 @@
             box-shadow: 0 8px 20px rgba(255,140,0,0.3);
         }
         .card h3 {
+            font-family: 'Oswald', sans-serif;
             color: #ff8c00;
-            margin-top: 0;
-            font-size: 1.1em;
+            margin-bottom: 10px;
+            font-size: 1.2em;
         }
-        .card p {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.5;
+        .card p { color: #ccc; font-size: 0.95em; line-height: 1.6; }
+
+        /* БРЕНДИ */
+        .brands {
+            margin-bottom: 50px;
         }
+        .brands-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        .brand-item {
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 6px;
+            padding: 12px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1em;
+            color: #ff8c00;
+            letter-spacing: 1px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .brand-item:hover {
+            background: #ff8c00;
+            color: #1a1a1a;
+            transform: scale(1.05);
+        }
+
+        /* КОНТАКТИ */
         .contacts {
             background: #2d2d2d;
             border: 1px solid #444;
             border-left: 4px solid #ff8c00;
             border-radius: 8px;
             padding: 30px;
-            margin: 20px 0;
+            margin-bottom: 50px;
         }
         .contacts h2 {
+            font-family: 'Oswald', sans-serif;
             color: #ff8c00;
-            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8em;
         }
         .contacts p {
             font-size: 1.1em;
             color: #ddd;
             margin: 12px 0;
         }
-        .contacts a {
-            color: #ff8c00;
-            text-decoration: none;
-            font-weight: bold;
+        .contacts a { color: #ff8c00; text-decoration: none; font-weight: bold; }
+        .btn-wrap {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        .contacts a:hover { text-decoration: underline; }
-        .btn-contact {
+        .btn-call {
             display: inline-block;
             background: #ff8c00;
             color: #1a1a1a;
-            padding: 12px 30px;
+            padding: 14px 30px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1em;
-            margin-top: 15px;
             transition: background 0.2s;
         }
-        .btn-contact:hover { background: #ffa500; }
+        .btn-call:hover { background: #ffa500; }
+        .btn-viber {
+            display: inline-block;
+            background: #7360f2;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background 0.2s;
+        }
+        .btn-viber:hover { background: #5a4bd1; }
+
+        /* ФОТО МАГАЗИНУ */
+        .photos {
+            margin-bottom: 50px;
+        }
+        .photos-grid {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .photo-placeholder {
+            background: #2d2d2d;
+            border: 2px dashed #ff8c00;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 250px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
         footer {
             background: #111;
             border-top: 3px solid #ff8c00;
             color: #888;
             text-align: center;
             padding: 20px;
-            margin-top: 40px;
         }
         footer span { color: #ff8c00; }
     </style>
@@ -136,8 +205,8 @@
 
 <div class="container">
 
+    <!-- АСОРТИМЕНТ -->
     <h2 class="section-title">🔧 Наш асортимент</h2>
-
     <div class="cards">
         <div class="card">
             <h3>⛽ Бензоінструмент</h3>
@@ -157,12 +226,48 @@
         </div>
     </div>
 
+    <!-- БРЕНДИ -->
+    <div class="brands">
+        <h2 class="section-title">🏆 Наші бренди</h2>
+        <div class="brands-grid">
+            <div class="brand-item">STURMAX</div>
+            <div class="brand-item">YATO</div>
+            <div class="brand-item">VITALS</div>
+            <div class="brand-item">FORTE</div>
+            <div class="brand-item">TEKHMAN</div>
+            <div class="brand-item">ЗЕНІТ</div>
+            <div class="brand-item">GRUNHELM</div>
+            <div class="brand-item">GARTNER</div>
+            <div class="brand-item">WERK</div>
+        </div>
+    </div>
+
+    <!-- ФОТО МАГАЗИНУ -->
+    <div class="photos">
+        <h2 class="section-title">📸 Наш магазин</h2>
+        <div class="photos-grid">
+            <div class="photo-placeholder">
+                📷 Фото магазину<br>скоро буде
+            </div>
+            <div class="photo-placeholder">
+                📷 Фото магазину<br>скоро буде
+            </div>
+            <div class="photo-placeholder">
+                📷 Фото магазину<br>скоро буде
+            </div>
+        </div>
+    </div>
+
+    <!-- КОНТАКТИ -->
     <div class="contacts">
         <h2>📞 Контакти</h2>
         <p>📱 Телефон: <a href="tel:+380964502794">+38 096 450 2794</a></p>
         <p>📍 Місто: Самбір</p>
         <p>🕐 Графік роботи: 8:30 - 17:00</p>
-        <a href="tel:+380964502794" class="btn-contact">📞 Зателефонувати</a>
+        <div class="btn-wrap">
+            <a href="tel:+380964502794" class="btn-call">📞 Зателефонувати</a>
+            <a href="viber://chat?number=%2B380964502794" class="btn-viber">💬 Viber</a>
+        </div>
     </div>
 
 </div>
