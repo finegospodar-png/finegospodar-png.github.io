@@ -4,56 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Файний Господар - Магазин інструментів</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: #1a1a1a;
             color: #fff;
         }
+
+        /* ШАПКА З РОЗМИТИМ ФОНОМ */
         header {
-            background: linear-gradient(135deg, #111, #2d2d2d);
-            border-bottom: 4px solid #ff8c00;
-            padding: 40px 20px;
+            position: relative;
+            padding: 60px 20px;
             text-align: center;
+            overflow: hidden;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        header img {
-            height: 180px;
+        .header-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('logo.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) brightness(0.3);
+            transform: scale(1.1);
+            z-index: 0;
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        .header-logo {
+            height: 160px;
             display: block;
             margin: 0 auto 20px;
+            filter: drop-shadow(0 0 20px rgba(255,140,0,0.8));
         }
         header h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 5em;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5.5em;
+            color: #fff;
+            letter-spacing: 8px;
+            line-height: 1;
+            text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
+        }
+        header h1 span {
             color: #ff8c00;
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            text-shadow: 3px 3px 15px rgba(255,140,0,0.6);
         }
-        header p {
-            margin: 10px 0 0;
-            color: #aaa;
-            font-size: 1.1em;
+        .subtitle {
+            margin: 8px 0 0;
+            color: #fff;
+            font-size: 1em;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
+        .service-badge {
+            display: inline-block;
+            background: #ff8c00;
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 1em;
+            padding: 6px 20px;
+            border-radius: 20px;
+            margin-top: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
         .container {
             max-width: 960px;
             margin: 40px auto;
             padding: 0 20px;
         }
         .section-title {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             text-align: center;
             color: #ff8c00;
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
         }
+
+        /* КАРТКИ АСОРТИМЕНТУ */
         .cards {
             display: flex;
             gap: 20px;
@@ -75,46 +117,20 @@
             box-shadow: 0 8px 20px rgba(255,140,0,0.3);
         }
         .card h3 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
             margin-bottom: 10px;
-            font-size: 1.2em;
+            font-size: 1.3em;
+            letter-spacing: 1px;
         }
         .card p { color: #ccc; font-size: 0.95em; line-height: 1.6; }
-        .brands {
-            margin-bottom: 50px;
-        }
-        .brands-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-        .brand-item {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-radius: 6px;
-            padding: 12px 20px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1em;
-            color: #ff8c00;
-            letter-spacing: 1px;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .brand-item:hover {
-            background: #ff8c00;
-            color: #1a1a1a;
-            transform: scale(1.05);
-        }
 
         /* ФОТО ІНСТРУМЕНТІВ */
-        .tools-photos {
-            margin-bottom: 50px;
-        }
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
+            margin-bottom: 50px;
         }
         .tool-card {
             background: #2d2d2d;
@@ -136,30 +152,63 @@
             padding: 10px;
             text-align: center;
             color: #ff8c00;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.95em;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1em;
+            letter-spacing: 1px;
         }
 
+        /* БРЕНДИ */
+        .brands-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .brand-item {
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95em;
+            letter-spacing: 2px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: default;
+        }
+        .brand-item:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        .brand-yato     { background: #cc0000; color: #fff; border: 2px solid #ff0000; }
+        .brand-vitals   { background: #003399; color: #fff; border: 2px solid #0044cc; }
+        .brand-forte    { background: #1a6600; color: #fff; border: 2px solid #228800; }
+        .brand-sturmax  { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
+        .brand-tekhman  { background: #cc5500; color: #fff; border: 2px solid #ff6600; }
+        .brand-zenit    { background: #003399; color: #ff8c00; border: 2px solid #ff8c00; }
+        .brand-grunhelm { background: #1a6600; color: #fff; border: 2px solid #33aa00; }
+        .brand-gartner  { background: #006633; color: #fff; border: 2px solid #009944; }
+        .brand-werk     { background: #cc0000; color: #fff; border: 2px solid #ee0000; }
+        .brand-haisser  { background: #003399; color: #ffcc00; border: 2px solid #ffcc00; }
+
         /* ФОТО МАГАЗИНУ */
-        .photos { margin-bottom: 50px; }
         .photos-grid {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 50px;
         }
-        .photo-placeholder {
-            background: #2d2d2d;
-            border: 2px dashed #ff8c00;
-            border-radius: 8px;
+        .photos-grid img {
             flex: 1;
             min-width: 250px;
             height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.9em;
-            text-align: center;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #444;
+            transition: transform 0.2s;
+        }
+        .photos-grid img:hover {
+            transform: scale(1.02);
+            border-color: #ff8c00;
         }
 
         /* КОНТАКТИ */
@@ -172,54 +221,36 @@
             margin-bottom: 50px;
         }
         .contacts h2 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
             margin-bottom: 20px;
-            font-size: 1.8em;
+            font-size: 2em;
+            letter-spacing: 2px;
         }
-        .contacts p {
-            font-size: 1.1em;
-            color: #ddd;
-            margin: 12px 0;
-        }
+        .contacts p { font-size: 1.1em; color: #ddd; margin: 12px 0; }
         .contacts a { color: #ff8c00; text-decoration: none; font-weight: bold; }
-        .btn-wrap {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+        .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
         .btn-call {
-            display: inline-block;
-            background: #ff8c00;
-            color: #1a1a1a;
-            padding: 14px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1em;
-            transition: background 0.2s;
+            background: #ff8c00; color: #1a1a1a;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
         }
         .btn-call:hover { background: #ffa500; }
         .btn-viber {
-            display: inline-block;
-            background: #7360f2;
-            color: white;
-            padding: 14px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1em;
-            transition: background 0.2s;
+            background: #7360f2; color: white;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
         }
         .btn-viber:hover { background: #5a4bd1; }
 
         /* КАРТА */
-        .map-section { margin-bottom: 50px; }
         .map-container {
             border-radius: 8px;
             overflow: hidden;
             border: 2px solid #ff8c00;
+            margin-bottom: 50px;
         }
 
         footer {
@@ -232,7 +263,7 @@
         footer span { color: #ff8c00; }
 
         @media (max-width: 600px) {
-            header h1 { font-size: 2.8em; }
+            header h1 { font-size: 3em; }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
@@ -240,14 +271,17 @@
 <body>
 
 <header>
-    <img src="logo.jpg" alt="Файний Господар">
-    <h1>Файний Господар</h1>
-    <p>Магазин-сервіс інструментів • Самбір</p>
+    <div class="header-bg"></div>
+    <div class="header-content">
+        <img src="logo.jpg" alt="Файний Господар" class="header-logo">
+        <h1><span>Файний</span> Господар</h1>
+        <p class="subtitle">Самбір • Львівська область</p>
+        <span class="service-badge">⚙️ Магазин — Сервіс</span>
+    </div>
 </header>
 
 <div class="container">
 
-    <!-- АСОРТИМЕНТ -->
     <h2 class="section-title">🔧 Наш асортимент</h2>
     <div class="cards">
         <div class="card">
@@ -268,88 +302,77 @@
         </div>
     </div>
 
-    <!-- КАРТИНКИ ІНСТРУМЕНТІВ -->
-    <div class="tools-photos">
-        <h2 class="section-title">⚙️ Наш інструмент</h2>
-        <div class="tools-grid">
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&q=80" alt="Бензопила">
-                <p>Бензопили</p>
-            </div>
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&q=80" alt="Дриль">
-                <p>Електроінструмент</p>
-            </div>
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=400&q=80" alt="Інструменти">
-                <p>Витратний інструмент</p>
-            </div>
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80" alt="Мотокоса">
-                <p>Мотокоси</p>
-            </div>
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80" alt="Будівництво">
-                <p>Прокат обладнання</p>
-            </div>
-            <div class="tool-card">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Шуруповерт">
-                <p>Шуруповерти</p>
-            </div>
+    <h2 class="section-title">⚙️ Наш інструмент</h2>
+    <div class="tools-grid">
+        <div class="tool-card">
+            <img src="foto1.png" alt="Інструмент">
+            <p>Бензоінструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto2.png" alt="Інструмент">
+            <p>Електроінструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto3.png" alt="Інструмент">
+            <p>Витратний інструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto4.png" alt="Інструмент">
+            <p>Мотокоси</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto5.png" alt="Інструмент">
+            <p>Шуруповерти</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto7.png" alt="Інструмент">
+            <p>Прокат обладнання</p>
         </div>
     </div>
 
-    <!-- БРЕНДИ -->
-    <div class="brands">
-        <h2 class="section-title">🏆 Наші бренди</h2>
-        <div class="brands-grid">
-            <div class="brand-item">STURMAX</div>
-            <div class="brand-item">YATO</div>
-            <div class="brand-item">VITALS</div>
-            <div class="brand-item">FORTE</div>
-            <div class="brand-item">TEKHMAN</div>
-            <div class="brand-item">ЗЕНІТ</div>
-            <div class="brand-item">GRUNHELM</div>
-            <div class="brand-item">GARTNER</div>
-            <div class="brand-item">WERK</div>
-        </div>
+    <h2 class="section-title">🏆 Наші бренди</h2>
+    <div class="brands-grid">
+        <div class="brand-item brand-sturmax">STURMAX</div>
+        <div class="brand-item brand-yato">YATO</div>
+        <div class="brand-item brand-vitals">VITALS</div>
+        <div class="brand-item brand-forte">FORTE</div>
+        <div class="brand-item brand-tekhman">TEKHMAN</div>
+        <div class="brand-item brand-zenit">ЗЕНІТ</div>
+        <div class="brand-item brand-grunhelm">GRUNHELM</div>
+        <div class="brand-item brand-gartner">GARTNER</div>
+        <div class="brand-item brand-werk">WERK</div>
+        <div class="brand-item brand-haisser">HAISSER</div>
     </div>
 
-    <!-- ФОТО МАГАЗИНУ -->
-    <div class="photos">
-        <h2 class="section-title">📸 Наш магазин</h2>
-        <div class="photos-grid">
-            <div class="photo-placeholder">📷 Фото магазину<br>скоро буде</div>
-            <div class="photo-placeholder">📷 Фото магазину<br>скоро буде</div>
-            <div class="photo-placeholder">📷 Фото магазину<br>скоро буде</div>
-        </div>
+    <h2 class="section-title">📸 Наш магазин</h2>
+    <div class="photos-grid">
+        <img src="foto1.jpg" alt="Магазин">
+        <img src="foto2.jpg" alt="Магазин">
+        <img src="foto3.jpg" alt="Магазин">
+        <img src="foto4.jpg" alt="Магазин">
     </div>
 
-    <!-- КОНТАКТИ -->
     <div class="contacts">
         <h2>📞 Контакти</h2>
-        <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
+        <p>📱 Телефон: <a href="tel:+380964502794">+38 096 450 2794</a></p>
         <p>📍 Місто: Самбір</p>
         <p>🕐 Графік роботи: 8:30 - 17:00</p>
         <div class="btn-wrap">
-            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
-            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+            <a href="tel:+380964502794" class="btn-call">📞 Зателефонувати</a>
+            <a href="viber://chat?number=%2B380964502794" class="btn-viber">💬 Viber</a>
         </div>
     </div>
 
-    <!-- КАРТА -->
-    <div class="map-section">
-        <h2 class="section-title">📍 Як нас знайти</h2>
-        <div class="map-container">
-            <iframe
-                src="https://www.google.com/maps?q=Самбір,+Львівська+область,+Україна&output=embed"
-                width="100%"
-                height="400"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy">
-            </iframe>
-        </div>
+    <h2 class="section-title">📍 Як нас знайти</h2>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps?q=Самбір,+Львівська+область,+Україна&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
     </div>
 
 </div>
