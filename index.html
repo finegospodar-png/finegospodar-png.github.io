@@ -12,8 +12,6 @@
             background: #1a1a1a;
             color: #fff;
         }
-
-        /* ШАПКА */
         header {
             position: relative;
             padding: 60px 20px;
@@ -72,7 +70,6 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-
         .container {
             max-width: 960px;
             margin: 40px auto;
@@ -90,7 +87,7 @@
             padding-bottom: 10px;
         }
 
-        /* АСОРТИМЕНТ З ФОТО ФОНОМ */
+        /* АСОРТИМЕНТ */
         .cards {
             display: flex;
             gap: 20px;
@@ -100,12 +97,12 @@
         .card {
             position: relative;
             border-radius: 10px;
-            padding: 30px 20px;
+            padding: 30px 15px 20px;
             flex: 1;
             min-width: 200px;
             overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 180px;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -129,10 +126,11 @@
             font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
             margin-bottom: 8px;
-            font-size: 1.4em;
+            font-size: 1.2em;
             letter-spacing: 1px;
+            line-height: 1.3;
         }
-        .card p { color: #ddd; font-size: 0.9em; line-height: 1.5; }
+        .card p { color: #ddd; font-size: 0.85em; line-height: 1.5; }
 
         /* ФОТО ІНСТРУМЕНТІВ */
         .tools-grid {
@@ -164,6 +162,37 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1em;
             letter-spacing: 1px;
+        }
+
+        /* РЕМОНТ */
+        .repair-block {
+            background: linear-gradient(135deg, #2d1a00, #1a1100);
+            border: 2px solid #ff8c00;
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin-bottom: 50px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255,140,0,0.2);
+        }
+        .repair-block .repair-icon {
+            font-size: 4em;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .repair-block h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #ff8c00;
+            font-size: 2.5em;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .repair-block p {
+            color: #ddd;
+            line-height: 1.8;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         /* БРЕНДИ */
@@ -199,6 +228,7 @@
         .brand-gartner  { background: #006633; color: #fff; border: 2px solid #009944; }
         .brand-werk     { background: #cc0000; color: #fff; border: 2px solid #ee0000; }
         .brand-haisser  { background: #003399; color: #ffcc00; border: 2px solid #ffcc00; }
+        .brand-oleomac  { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
 
         /* ФОТО МАГАЗИНУ */
         .photos-grid {
@@ -220,29 +250,6 @@
             transform: scale(1.02);
             border-color: #ff8c00;
         }
-
-        /* РЕМОНТ */
-        .repair-block {
-            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
-            border: 1px solid #444;
-            border-left: 5px solid #ff8c00;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 50px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .repair-icon { font-size: 3em; }
-        .repair-text h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 1.8em;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .repair-text p { color: #ccc; line-height: 1.6; }
 
         /* ГАРЯЧІ ПРОПОЗИЦІЇ */
         .hot-block {
@@ -272,27 +279,19 @@
             flex-wrap: wrap;
         }
         .btn-tiktok {
-            background: #000;
-            color: #fff;
+            background: #000; color: #fff;
             border: 2px solid #ff0050;
-            padding: 14px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1em;
-            transition: all 0.2s;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: all 0.2s;
         }
         .btn-tiktok:hover { background: #ff0050; }
         .btn-facebook {
-            background: #1877f2;
-            color: #fff;
+            background: #1877f2; color: #fff;
             border: 2px solid #1877f2;
-            padding: 14px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1em;
-            transition: all 0.2s;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: all 0.2s;
         }
         .btn-facebook:hover { background: #0d5ab8; }
 
@@ -314,6 +313,28 @@
         }
         .contacts p { font-size: 1.1em; color: #ddd; margin: 12px 0; }
         .contacts a { color: #ff8c00; text-decoration: none; font-weight: bold; }
+        .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-call {
+            background: #ff8c00; color: #1a1a1a;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
+        }
+        .btn-call:hover { background: #ffa500; }
+        .btn-viber {
+            background: #7360f2; color: white;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
+        }
+        .btn-viber:hover { background: #5a4bd1; }
+        .btn-whatsapp {
+            background: #25d366; color: white;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
+        }
+        .btn-whatsapp:hover { background: #1da851; }
 
         /* АДРЕСА */
         .address-block {
@@ -338,22 +359,6 @@
             margin-top: 8px;
             font-style: italic;
         }
-
-        .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .btn-call {
-            background: #ff8c00; color: #1a1a1a;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700; font-size: 1em;
-            transition: background 0.2s;
-        }
-        .btn-call:hover { background: #ffa500; }
-        .btn-viber {
-            background: #7360f2; color: white;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700; font-size: 1em;
-            transition: background 0.2s;
-        }
-        .btn-viber:hover { background: #5a4bd1; }
 
         /* КАРТА */
         .map-container {
@@ -398,8 +403,8 @@
         <div class="card">
             <div class="card-bg" style="background-image:url('foto7.png')"></div>
             <div class="card-content">
-                <h3>⛽ Бензоінструмент</h3>
-                <p>Бензопили, мотокоси, культиватори та інша техніка</p>
+                <h3>⛽ Бензоінструмент, генератори, газонокосарки</h3>
+                <p>Бензопили, мотокоси, культиватори, генератори, газонокосарки</p>
             </div>
         </div>
         <div class="card">
@@ -441,26 +446,20 @@
             <p>Витратний інструмент</p>
         </div>
         <div class="tool-card">
-            <img src="foto1.png" alt="Мотокоси">
+            <img src="foto6.jpg" alt="Мотокоси">
             <p>Мотокоси</p>
         </div>
         <div class="tool-card">
             <img src="foto3.png" alt="Шуруповерти">
             <p>Шуруповерти</p>
         </div>
-        <div class="tool-card">
-            <img src="foto2.png" alt="Прокат">
-            <p>Прокат обладнання</p>
-        </div>
     </div>
 
     <!-- РЕМОНТ -->
     <div class="repair-block">
-        <div class="repair-icon">🔩</div>
-        <div class="repair-text">
-            <h2>Ремонт бензоінструменту</h2>
-            <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, культиваторів та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
-        </div>
+        <span class="repair-icon">🔩</span>
+        <h2>Ремонт бензоінструменту</h2>
+        <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
     </div>
 
     <!-- БРЕНДИ -->
@@ -476,6 +475,7 @@
         <a href="https://gartner.ua" target="_blank" class="brand-item brand-gartner">GARTNER</a>
         <a href="https://budpostach.ua" target="_blank" class="brand-item brand-werk">WERK</a>
         <a href="https://haisser.com.ua" target="_blank" class="brand-item brand-haisser">HAISSER</a>
+        <a href="https://epi.com.ua/" target="_blank" class="brand-item brand-oleomac">OLEO-MAC</a>
     </div>
 
     <!-- ФОТО МАГАЗИНУ -->
@@ -484,7 +484,7 @@
         <img src="foto3.jpg" alt="Магазин">
         <img src="foto1.jpg" alt="Магазин">
         <img src="foto2.jpg" alt="Магазин">
-        <img src="foto4.jpg" alt="Магазин">
+        <img src="foto8.jpg" alt="Магазин">
     </div>
 
     <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
@@ -501,10 +501,14 @@
     <div class="contacts">
         <h2>📞 Контакти</h2>
         <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
-        <p>🕐 Графік роботи: 8:30 - 17:00</p>
+        <p>🕐 Графік роботи:</p>
+        <p>Пн - Пт: 8:30 - 17:00</p>
+        <p>Субота: 8:30 - 15:00</p>
+        <p>Неділя: вихідний</p>
         <div class="btn-wrap">
             <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
             <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+            <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
         </div>
     </div>
 
