@@ -97,7 +97,7 @@
         .card {
             position: relative;
             border-radius: 10px;
-            padding: 30px 15px 20px;
+            padding: 20px 15px;
             flex: 1;
             min-width: 200px;
             overflow: hidden;
@@ -105,9 +105,10 @@
             min-height: 200px;
             display: flex;
             flex-direction: column;
-           justify-content: flex-start;
-align-items: center;
-text-align: center; 
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            cursor: pointer;
         }
         .card-bg {
             position: absolute;
@@ -119,7 +120,7 @@ text-align: center;
             transform: scale(1.05);
             z-index: 0;
         }
-        .card-content { position: relative; z-index: 1; }
+        .card-content { position: relative; z-index: 1; width: 100%; }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255,140,0,0.4);
@@ -131,8 +132,43 @@ text-align: center;
             font-size: 1.2em;
             letter-spacing: 1px;
             line-height: 1.3;
+            text-align: center;
         }
         .card p { color: #ddd; font-size: 0.85em; line-height: 1.5; }
+
+        /* РОЗКЛАДНИЙ СПИСОК */
+        .card-list {
+            display: none;
+            margin-top: 15px;
+            text-align: left;
+            width: 100%;
+            border-top: 1px solid #ff8c00;
+            padding-top: 12px;
+        }
+        .card-list.open { display: block; }
+        .card-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card-list ul li {
+            padding: 6px 0;
+            color: #fff;
+            font-size: 0.9em;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-list ul li:last-child { border-bottom: none; }
+        .card-list ul li span { color: #ff8c00; font-size: 1.1em; }
+        .card-toggle {
+            display: inline-block;
+            margin-top: 10px;
+            color: #ff8c00;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
         /* ФОТО ІНСТРУМЕНТІВ */
         .tools-grid {
@@ -168,6 +204,8 @@ text-align: center;
 
         /* РЕМОНТ */
         .repair-block {
+            position: relative;
+            overflow: hidden;
             background: linear-gradient(135deg, #2d1a00, #1a1100);
             border: 2px solid #ff8c00;
             border-radius: 12px;
@@ -176,12 +214,27 @@ text-align: center;
             text-align: center;
             box-shadow: 0 0 30px rgba(255,140,0,0.2);
         }
-        .repair-block .repair-icon {
+        .repair-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('foto17.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px) brightness(0.2);
+            transform: scale(1.05);
+            z-index: 0;
+        }
+        .repair-content {
+            position: relative;
+            z-index: 1;
+        }
+        .repair-content .repair-icon {
             font-size: 4em;
             display: block;
             margin-bottom: 15px;
         }
-        .repair-block h2 {
+        .repair-content h2 {
             font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
             font-size: 2.5em;
@@ -189,8 +242,8 @@ text-align: center;
             margin-bottom: 15px;
             text-align: center;
         }
-        .repair-block p {
-            color: #ddd;
+        .repair-content p {
+            color: #fff;
             line-height: 1.8;
             font-size: 1.1em;
             max-width: 700px;
@@ -254,39 +307,62 @@ text-align: center;
         }
 
         /* ГАРЯЧІ ПРОПОЗИЦІЇ */
-        <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
-<div class="hot-block">
-    <h2>🔥 Гарячі пропозиції</h2>
-    <p>Дивіться наші рекламні ролики та актуальні пропозиції!</p>
-
-    <!-- ВІДЕО -->
-    <div style="
-        margin: 20px auto;
-        max-width: 600px;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 2px solid #ff8c00;
-        box-shadow: 0 0 25px rgba(255,140,0,0.4);">
-        <video
-            controls
-            autoplay
-            muted
-            loop
-            playsinline
-            style="width:100%; display:block;">
-            <source src="video2.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <!-- КНОПКИ СОЦМЕРЕЖ -->
-    <p style="margin: 20px 0 10px; color:#aaa;">
-        Більше відео та пропозицій у наших соцмережах:
-    </p>
-    <div class="social-btns">
-        <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
-        <a href="https://www.facebook.com/finegospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
-    </div>
-</div>
+        .hot-block {
+            background: linear-gradient(135deg, #2d1a00, #1a1a1a);
+            border: 2px solid #ff8c00;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(255,140,0,0.2);
+        }
+        .hot-block h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #ff8c00;
+            font-size: 2.5em;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .hot-block p {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 0.95em;
+        }
+        .video-wrap {
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #ff8c00;
+            box-shadow: 0 0 25px rgba(255,140,0,0.4);
+        }
+        .video-wrap video {
+            width: 100%;
+            display: block;
+        }
+        .social-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn-tiktok {
+            background: #000; color: #fff;
+            border: 2px solid #ff0050;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: all 0.2s;
+        }
+        .btn-tiktok:hover { background: #ff0050; }
+        .btn-facebook {
+            background: #1877f2; color: #fff;
+            border: 2px solid #1877f2;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: all 0.2s;
+        }
+        .btn-facebook:hover { background: #0d5ab8; }
 
         /* КОНТАКТИ */
         .contacts {
@@ -393,32 +469,79 @@ text-align: center;
     <!-- АСОРТИМЕНТ -->
     <h2 class="section-title">🔧 Наш асортимент</h2>
     <div class="cards">
-        <div class="card">
+        <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto7.png')"></div>
             <div class="card-content">
                 <h3>⛽ Бензоінструмент</h3>
-                <p>Бензопили, мотокоси, культиватори, генератори, газонокосарки</p>
+                <p>Бензопили, мотокоси, культиватори, генератори</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🪚</span> Бензопили</li>
+                        <li><span>🌿</span> Мотокоси</li>
+                        <li><span>⚡</span> Генератори</li>
+                        <li><span>🚜</span> Культиватори</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto4.png')"></div>
             <div class="card-content">
                 <h3>⚡ Електроінструмент</h3>
-                <p>Дрилі, шурупокрути, шліфмашинки кутові, лобзики</p>
+                <p>Дрилі, шуруповерти, шліфмашинки, лобзики</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🔧</span> Дрилі</li>
+                        <li><span>🔩</span> Перфоратори</li>
+                        <li><span>🔩</span> Шуруповерти</li>
+                        <li><span>⚙️</span> Шліфмашинки кутові</li>
+                        <li><span>🪚</span> Лобзики</li>
+                        <li><span>🪚</span> Електропили</li>
+                        <li><span>✨</span> Полірувальні машинки</li>
+                        <li><span>💨</span> Компресори</li>
+                        <li><span>🌿</span> Електрокоси</li>
+                        <li><span>🧱</span> Шліфмашинки для стін</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto5.png')"></div>
             <div class="card-content">
                 <h3>🔩 Витратний інструмент</h3>
                 <p>Диски, свердла, леза, насадки</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>⭕</span> Диски відрізні</li>
+                        <li><span>🔩</span> Свердла та бури</li>
+                        <li><span>⛓️</span> Ланцюги для пил</li>
+                        <li><span>🪛</span> Насадки та біти</li>
+                        <li><span>🔪</span> Леза та полотна</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto2.png')"></div>
             <div class="card-content">
                 <h3>🏗️ Прокат обладнання</h3>
                 <p>Будівельне обладнання в оренду</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🔄</span> Бетонозмішувачі 160л</li>
+                        <li><span>🔄</span> Бетонозмішувачі 250л</li>
+                        <li><span>🧱</span> Шліфмашинки для стін</li>
+                        <li><span>📳</span> Вібратор для бетону</li>
+                        <li><span>🔨</span> Відбійні молотки</li>
+                        <li><span>⚒️</span> Перфоратори SDS max</li>
+                        <li><span>🏗️</span> Віброплити</li>
+                        <li><span>📳</span> Вібронога</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -449,27 +572,13 @@ text-align: center;
     </div>
 
     <!-- РЕМОНТ -->
-  <div class="repair-block" style="position:relative; overflow:hidden;">
-    <div style="
-        position:absolute;
-        top:0; left:0;
-        width:100%; height:100%;
-        background-image:url('foto7.png');
-        background-size:cover;
-        background-position:center;
-        filter:blur(4px) brightness(0.25);
-        transform:scale(1.05);
-        z-index:0;">
-    </div>
-    <div style="position:relative; z-index:1;">
-        <span class="repair-icon">🔩</span>
-        <h2>Ремонт бензоінструменту</h2>
-        <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
-    </div>
-</div>
-        <span class="repair-icon">🔩</span>
-        <h2>Ремонт бензоінструменту</h2>
-        <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
+    <div class="repair-block">
+        <div class="repair-bg"></div>
+        <div class="repair-content">
+            <span class="repair-icon">🔩</span>
+            <h2>Ремонт бензоінструменту</h2>
+            <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
+        </div>
     </div>
 
     <!-- БРЕНДИ -->
@@ -500,7 +609,13 @@ text-align: center;
     <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
     <div class="hot-block">
         <h2>🔥 Гарячі пропозиції</h2>
-        <p>Дивіться наші рекламні ролики та актуальні пропозиції в соціальних мережах!</p>
+        <p>Дивіться наші рекламні ролики та актуальні пропозиції!</p>
+        <div class="video-wrap">
+            <video controls autoplay muted loop playsinline>
+                <source src="video2.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p style="margin-top:20px; color:#aaa;">Більше відео у наших соцмережах:</p>
         <div class="social-btns">
             <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
             <a href="https://www.facebook.com/finegospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
@@ -547,6 +662,15 @@ text-align: center;
 <footer>
     <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
 </footer>
+
+<script>
+function toggleList(card) {
+    const list = card.querySelector('.card-list');
+    const toggle = card.querySelector('.card-toggle');
+    list.classList.toggle('open');
+    toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
+}
+</script>
 
 </body>
 </html>
