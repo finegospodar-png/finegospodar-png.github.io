@@ -254,48 +254,39 @@ text-align: center;
         }
 
         /* ГАРЯЧІ ПРОПОЗИЦІЇ */
-        .hot-block {
-            background: linear-gradient(135deg, #2d1a00, #1a1a1a);
-            border: 1px solid #ff8c00;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        .hot-block h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 2em;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
-        .hot-block p {
-            color: #ccc;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-        }
-        .social-btns {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-tiktok {
-            background: #000; color: #fff;
-            border: 2px solid #ff0050;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: all 0.2s;
-        }
-        .btn-tiktok:hover { background: #ff0050; }
-        .btn-facebook {
-            background: #1877f2; color: #fff;
-            border: 2px solid #1877f2;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: all 0.2s;
-        }
-        .btn-facebook:hover { background: #0d5ab8; }
+        <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
+<div class="hot-block">
+    <h2>🔥 Гарячі пропозиції</h2>
+    <p>Дивіться наші рекламні ролики та актуальні пропозиції!</p>
+
+    <!-- ВІДЕО -->
+    <div style="
+        margin: 20px auto;
+        max-width: 600px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 2px solid #ff8c00;
+        box-shadow: 0 0 25px rgba(255,140,0,0.4);">
+        <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            style="width:100%; display:block;">
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- КНОПКИ СОЦМЕРЕЖ -->
+    <p style="margin: 20px 0 10px; color:#aaa;">
+        Більше відео та пропозицій у наших соцмережах:
+    </p>
+    <div class="social-btns">
+        <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
+        <a href="https://www.facebook.com/finegospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
+    </div>
+</div>
 
         /* КОНТАКТИ */
         .contacts {
