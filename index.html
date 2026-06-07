@@ -370,4 +370,323 @@
         .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
         .btn-call {
             background: #ff8c00; color: #1a1a1a;
-            padding: 14px 30px; border-radius: 25px
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
+        }
+        .btn-call:hover { background: #ffa500; }
+        .btn-viber {
+            background: #7360f2; color: white;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
+        }
+        .btn-viber:hover { background: #5a4bd1; }
+        .btn-whatsapp {
+            background: #25d366; color: white;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700;
+            font-size: 1em; transition: background 0.2s;
+        }
+        .btn-whatsapp:hover { background: #1da851; }
+        .address-block {
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-left: 4px solid #ff8c00;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+        }
+        .address-block h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #ff8c00;
+            font-size: 1.5em;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .address-block p { color: #ddd; font-size: 1.05em; margin: 5px 0; }
+        .address-block .territory {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        .map-container {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #ff8c00;
+            margin-bottom: 50px;
+        }
+        footer {
+            background: #111;
+            border-top: 3px solid #ff8c00;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+        }
+        footer span { color: #ff8c00; }
+
+        /* МОДАЛЬНЕ ВІКНО */
+        #imgModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #imgModal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            border: 2px solid #ff8c00;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 3.2em; }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-bg"></div>
+    <div class="header-content">
+        <img src="logo.jpg" alt="Файний Господар" class="header-logo">
+        <h1><span>Файний</span> Господар</h1>
+        <p class="subtitle">Самбір • Львівська область</p>
+        <span class="service-badge">⚙️ Магазин — Сервіс</span>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- АСОРТИМЕНТ -->
+    <h2 class="section-title">🔧 Наш асортимент</h2>
+    <div class="cards">
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto7.png')"></div>
+            <div class="card-content">
+                <h3>⛽ Бензоінструмент</h3>
+                <p>Бензопили, мотокоси, культиватори, генератори</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🪚</span> Бензопили</li>
+                        <li><span>🌿</span> Мотокоси</li>
+                        <li><span>⚡</span> Генератори</li>
+                        <li><span>🚜</span> Культиватори</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto4.png')"></div>
+            <div class="card-content">
+                <h3>⚡ Електроінструмент</h3>
+                <p>Дрилі, шуруповерти, шліфмашинки, лобзики</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🔧</span> Дрилі</li>
+                        <li><span>🔩</span> Перфоратори</li>
+                        <li><span>🔩</span> Шуруповерти</li>
+                        <li><span>⚙️</span> Шліфмашинки кутові</li>
+                        <li><span>🪚</span> Лобзики</li>
+                        <li><span>🪚</span> Електропили</li>
+                        <li><span>✨</span> Полірувальні машинки</li>
+                        <li><span>💨</span> Компресори</li>
+                        <li><span>🌿</span> Електрокоси</li>
+                        <li><span>🧱</span> Шліфмашинки для стін</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto5.png')"></div>
+            <div class="card-content">
+                <h3>🔩 Витратний інструмент</h3>
+                <p>Диски, свердла, леза, насадки</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>⭕</span> Диски відрізні</li>
+                        <li><span>🔩</span> Свердла та бури</li>
+                        <li><span>⛓️</span> Ланцюги для пил</li>
+                        <li><span>🪛</span> Насадки та біти</li>
+                        <li><span>🔪</span> Леза та полотна</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto2.png')"></div>
+            <div class="card-content">
+                <h3>🏗️ Прокат обладнання</h3>
+                <p>Будівельне обладнання в оренду</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🔄</span> Бетонозмішувачі 160л</li>
+                        <li><span>🔄</span> Бетонозмішувачі 250л</li>
+                        <li><span>🧱</span> Шліфмашинки для стін</li>
+                        <li><span>📳</span> Вібратор для бетону</li>
+                        <li><span>🔨</span> Відбійні молотки</li>
+                        <li><span>⚒️</span> Перфоратори SDS max</li>
+                        <li><span>🏗️</span> Віброплити</li>
+                        <li><span>📳</span> Вібронога</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФОТО ІНСТРУМЕНТІВ -->
+    <h2 class="section-title">⚙️ Наш інструмент</h2>
+    <div class="tools-grid">
+        <div class="tool-card">
+            <img src="foto7.png" alt="Бензоінструмент">
+            <p>Бензоінструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto4.png" alt="Електроінструмент">
+            <p>Електроінструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto5.png" alt="Витратний інструмент">
+            <p>Витратний інструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto6.jpg" alt="Мотокоси">
+            <p>Мотокоси</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto3.png" alt="Шуруповерти">
+            <p>Шуруповерти</p>
+        </div>
+    </div>
+
+    <!-- РЕМОНТ -->
+    <div class="repair-block">
+        <div class="repair-bg"></div>
+        <div class="repair-content">
+            <span class="repair-icon">🔩</span>
+            <h2>Ремонт бензоінструменту</h2>
+            <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
+        </div>
+    </div>
+
+    <!-- БРЕНДИ -->
+    <h2 class="section-title">🏆 Наші бренди</h2>
+    <div class="brands-grid">
+        <a href="https://sturmax.com.ua" target="_blank" class="brand-item brand-sturmax">STURMAX</a>
+        <a href="https://yato24.com.ua/ua/" target="_blank" class="brand-item brand-yato">YATO</a>
+        <a href="https://vitals.ua" target="_blank" class="brand-item brand-vitals">VITALS</a>
+        <a href="https://budpostach.ua" target="_blank" class="brand-item brand-forte">FORTE</a>
+        <a href="https://tekmanshop.com.ua" target="_blank" class="brand-item brand-tekhman">TEKHMAN</a>
+        <a href="https://zenit-profi.com/ua/" target="_blank" class="brand-item brand-zenit">ЗЕНІТ</a>
+        <a href="https://budpostach.ua" target="_blank" class="brand-item brand-grunhelm">GRUNHELM</a>
+        <a href="https://gartner.ua" target="_blank" class="brand-item brand-gartner">GARTNER</a>
+        <a href="https://budpostach.ua" target="_blank" class="brand-item brand-werk">WERK</a>
+        <a href="https://haisser.com.ua" target="_blank" class="brand-item brand-haisser">HAISSER</a>
+        <a href="https://epi.com.ua/" target="_blank" class="brand-item brand-oleomac">OLEO-MAC</a>
+    </div>
+
+    <!-- ФОТО МАГАЗИНУ -->
+    <h2 class="section-title">📸 Наш магазин</h2>
+    <div class="photos-grid">
+        <img src="foto3.jpg" alt="Магазин">
+        <img src="foto1.jpg" alt="Магазин">
+        <img src="foto2.jpg" alt="Магазин">
+        <img src="foto8.jpg" alt="Магазин">
+    </div>
+
+    <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
+    <div class="hot-block">
+        <h2>🔥 Гарячі пропозиції</h2>
+        <p>Актуальні акції та пропозиції нашого магазину!</p>
+        <div class="posters-grid">
+            <div class="poster-item">
+                <img src="foto11.jpg" alt="Акція" onclick="openImg(this.src)">
+            </div>
+            <div class="poster-item">
+                <img src="foto12.jpg" alt="Акція" onclick="openImg(this.src)">
+            </div>
+        </div>
+        <p style="color:#aaa;">Більше пропозицій у наших соцмережах:</p>
+        <div class="social-btns">
+            <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
+            <a href="https://www.facebook.com/finegospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
+        </div>
+    </div>
+
+    <!-- КОНТАКТИ -->
+    <div class="contacts">
+        <h2>📞 Контакти</h2>
+        <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
+        <p>🕐 Графік роботи:</p>
+        <p>Пн - Пт: 8:30 - 17:00</p>
+        <p>Субота: 8:30 - 15:00</p>
+        <p>Неділя: вихідний</p>
+        <div class="btn-wrap">
+            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
+            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+            <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- АДРЕСА -->
+    <div class="address-block">
+        <h3>📍 Наша адреса</h3>
+        <p>м. Самбір, вул. Івана Франка 89</p>
+        <p class="territory">Територія Спецбази</p>
+    </div>
+
+    <!-- КАРТА -->
+    <h2 class="section-title">🗺️ Як нас знайти</h2>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps?q=вул.+Івана+Франка+89,+Самбір,+Львівська+область&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
+</footer>
+
+<!-- МОДАЛЬНЕ ВІКНО ДЛЯ ФОТО -->
+<div id="imgModal" onclick="closeImg()">
+    <img id="modalImg" src="" alt="Акція">
+</div>
+
+<script>
+function toggleList(card) {
+    const list = card.querySelector('.card-list');
+    const toggle = card.querySelector('.card-toggle');
+    list.classList.toggle('open');
+    toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
+}
+
+function openImg(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('imgModal').style.display = 'flex';
+}
+
+function closeImg() {
+    document.getElementById('imgModal').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
