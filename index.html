@@ -5,6 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Файний Господар - Магазин інструментів</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+   /* АНІМАЦІЇ */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(255,140,0,0.4); }
+    50% { box-shadow: 0 0 40px rgba(255,140,0,0.9); }
+}
+@keyframes spark {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100px) scale(0); opacity: 0; }
+}
+
+.header-title-line1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.8em;
+    color: #aaa;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    animation: fadeInDown 1s ease forwards;
+    margin-bottom: 5px;
+}
+.header-title-line2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 7em;
+    color: #ff8c00;
+    letter-spacing: 6px;
+    line-height: 1;
+    text-shadow:
+        0 0 30px rgba(255,140,0,0.5),
+        3px 3px 20px rgba(0,0,0,0.8);
+    animation: fadeInDown 1s ease 0.3s both;
+}
+.header-title-line3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4em;
+    color: #fff;
+    letter-spacing: 10px;
+    line-height: 1;
+    text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
+    animation: fadeInDown 1s ease 0.6s both;
+    margin-bottom: 15px;
+}
+.header-divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+    margin: 15px auto;
+    animation: fadeInUp 1s ease 0.9s both;
+}
+.header-rotating-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: #ff8c00;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    min-height: 25px;
+    animation: fadeInUp 1s ease 1.2s both;
+    margin-bottom: 20px;
+}
+.header-badges {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    animation: fadeInUp 1s ease 1.5s both;
+}
+.header-badge-item {
+    background: rgba(255,140,0,0.15);
+    border: 1px solid rgba(255,140,0,0.4);
+    color: #ddd;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+.header-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease 1.8s both;
+}
+.header-btn-primary {
+    background: #ff8c00;
+    color: #1a1a1a;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+    transition: transform 0.2s;
+}
+.header-btn-primary:hover { transform: scale(1.05); }
+.header-btn-secondary {
+    background: transparent;
+    color: #ff8c00;
+    border: 2px solid #ff8c00;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+.header-btn-secondary:hover {
+    background: #ff8c00;
+    color: #1a1a1a;
+}
+
+/* ІСКРИ */
+.sparks {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff8c00;
+    border-radius: 50%;
+    animation: spark 3s infinite;
+    opacity: 0;
+}
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
