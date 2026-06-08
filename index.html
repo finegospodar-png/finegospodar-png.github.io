@@ -13,78 +13,7 @@
             color: #fff;
         }
 
-        /* НАВІГАЦІЙНЕ МЕНЮ */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(20,20,20,0.97);
-            border-bottom: 2px solid #ff8c00;
-            z-index: 9000;
-            padding: 0 20px;
-        }
-        .nav-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 55px;
-        }
-        .nav-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 1.3em;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 5px;
-            list-style: none;
-        }
-        .nav-links a {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 0.8em;
-            font-weight: 600;
-            letter-spacing: 1px;
-            padding: 6px 10px;
-            border-radius: 4px;
-            transition: all 0.2s;
-            text-transform: uppercase;
-        }
-        .nav-links a:hover {
-            color: #ff8c00;
-            background: rgba(255,140,0,0.1);
-        }
-        .nav-burger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5em;
-            color: #ff8c00;
-        }
-        .nav-mobile {
-            display: none;
-            flex-direction: column;
-            background: rgba(20,20,20,0.98);
-            padding: 10px 20px 15px;
-            border-top: 1px solid #333;
-        }
-        .nav-mobile a {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 600;
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .nav-mobile a:hover { color: #ff8c00; }
-        .nav-mobile.open { display: flex; }
-
+        /* ШАПКА */
         header {
             position: relative;
             padding: 60px 20px;
@@ -95,7 +24,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 55px;
         }
         .header-bg {
             position: absolute;
@@ -144,24 +72,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
         }
-        .header-cta {
-            display: inline-block;
-            margin-top: 20px;
-            background: transparent;
-            color: #ff8c00;
-            border: 2px solid #ff8c00;
-            padding: 12px 35px;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 1em;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: all 0.2s;
-        }
-        .header-cta:hover {
-            background: #ff8c00;
-            color: #1a1a1a;
-        }
+
         .container {
             max-width: 960px;
             margin: 40px auto;
@@ -178,6 +89,8 @@
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
         }
+
+        /* АСОРТИМЕНТ З ФОТО ФОНОМ */
         .cards {
             display: flex;
             gap: 20px;
@@ -187,18 +100,15 @@
         .card {
             position: relative;
             border-radius: 10px;
-            padding: 20px 15px;
+            padding: 30px 20px;
             flex: 1;
             min-width: 200px;
             overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 200px;
+            min-height: 180px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
+            justify-content: flex-end;
         }
         .card-bg {
             position: absolute;
@@ -210,7 +120,7 @@
             transform: scale(1.05);
             z-index: 0;
         }
-        .card-content { position: relative; z-index: 1; width: 100%; }
+        .card-content { position: relative; z-index: 1; }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255,140,0,0.4);
@@ -219,41 +129,12 @@
             font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
             margin-bottom: 8px;
-            font-size: 1.2em;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            text-align: center;
-        }
-        .card p { color: #ddd; font-size: 0.85em; line-height: 1.5; }
-        .card-list {
-            display: none;
-            margin-top: 15px;
-            text-align: left;
-            width: 100%;
-            border-top: 1px solid #ff8c00;
-            padding-top: 12px;
-        }
-        .card-list.open { display: block; }
-        .card-list ul { list-style: none; padding: 0; }
-        .card-list ul li {
-            padding: 6px 0;
-            color: #fff;
-            font-size: 0.9em;
-            border-bottom: 1px solid #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .card-list ul li:last-child { border-bottom: none; }
-        .card-list ul li span { color: #ff8c00; font-size: 1.1em; }
-        .card-toggle {
-            display: inline-block;
-            margin-top: 10px;
-            color: #ff8c00;
-            font-size: 0.85em;
-            font-weight: 700;
+            font-size: 1.4em;
             letter-spacing: 1px;
         }
+        .card p { color: #ddd; font-size: 0.9em; line-height: 1.5; }
+
+        /* ФОТО ІНСТРУМЕНТІВ */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -284,49 +165,8 @@
             font-size: 1em;
             letter-spacing: 1px;
         }
-        .repair-block {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #2d1a00, #1a1100);
-            border: 2px solid #ff8c00;
-            border-radius: 12px;
-            padding: 40px 30px;
-            margin-bottom: 50px;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(255,140,0,0.2);
-        }
-        .repair-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('foto17.png');
-            background-size: cover;
-            background-position: center;
-            filter: blur(4px) brightness(0.2);
-            transform: scale(1.05);
-            z-index: 0;
-        }
-        .repair-content { position: relative; z-index: 1; }
-        .repair-content .repair-icon {
-            font-size: 4em;
-            display: block;
-            margin-bottom: 15px;
-        }
-        .repair-content h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 2.5em;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .repair-content p {
-            color: #fff;
-            line-height: 1.8;
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+
+        /* БРЕНДИ */
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
@@ -359,7 +199,8 @@
         .brand-gartner  { background: #006633; color: #fff; border: 2px solid #009944; }
         .brand-werk     { background: #cc0000; color: #fff; border: 2px solid #ee0000; }
         .brand-haisser  { background: #003399; color: #ffcc00; border: 2px solid #ffcc00; }
-        .brand-oleomac  { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
+
+        /* ФОТО МАГАЗИНУ */
         .photos-grid {
             display: flex;
             gap: 15px;
@@ -379,69 +220,83 @@
             transform: scale(1.02);
             border-color: #ff8c00;
         }
+
+        /* РЕМОНТ */
+        .repair-block {
+            background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+            border: 1px solid #444;
+            border-left: 5px solid #ff8c00;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .repair-icon { font-size: 3em; }
+        .repair-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #ff8c00;
+            font-size: 1.8em;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .repair-text p { color: #ccc; line-height: 1.6; }
+
+        /* ГАРЯЧІ ПРОПОЗИЦІЇ */
         .hot-block {
             background: linear-gradient(135deg, #2d1a00, #1a1a1a);
-            border: 2px solid #ff8c00;
-            border-radius: 12px;
+            border: 1px solid #ff8c00;
+            border-radius: 10px;
             padding: 30px;
             margin-bottom: 50px;
             text-align: center;
-            box-shadow: 0 0 25px rgba(255,140,0,0.2);
         }
         .hot-block h2 {
             font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
-            font-size: 2.5em;
+            font-size: 2em;
             letter-spacing: 3px;
             margin-bottom: 10px;
         }
-        .hot-block p { color: #ccc; margin-bottom: 20px; font-size: 0.95em; }
-        .posters-grid {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 25px 0;
-        }
-        .poster-item {
-            flex: 1;
-            min-width: 250px;
-            max-width: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid #ff8c00;
-            box-shadow: 0 0 20px rgba(255,140,0,0.3);
-            transition: transform 0.2s;
-        }
-        .poster-item:hover { transform: scale(1.02); }
-        .poster-item img {
-            width: 100%;
-            display: block;
-            cursor: pointer;
+        .hot-block p {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-size: 0.95em;
         }
         .social-btns {
             display: flex;
             gap: 15px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
         }
         .btn-tiktok {
-            background: #000; color: #fff;
+            background: #000;
+            color: #fff;
             border: 2px solid #ff0050;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: all 0.2s;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.2s;
         }
         .btn-tiktok:hover { background: #ff0050; }
         .btn-facebook {
-            background: #1877f2; color: #fff;
+            background: #1877f2;
+            color: #fff;
             border: 2px solid #1877f2;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: all 0.2s;
+            padding: 14px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1em;
+            transition: all 0.2s;
         }
         .btn-facebook:hover { background: #0d5ab8; }
+
+        /* КОНТАКТИ */
         .contacts {
             background: #2d2d2d;
             border: 1px solid #444;
@@ -459,28 +314,8 @@
         }
         .contacts p { font-size: 1.1em; color: #ddd; margin: 12px 0; }
         .contacts a { color: #ff8c00; text-decoration: none; font-weight: bold; }
-        .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .btn-call {
-            background: #ff8c00; color: #1a1a1a;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: background 0.2s;
-        }
-        .btn-call:hover { background: #ffa500; }
-        .btn-viber {
-            background: #7360f2; color: white;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: background 0.2s;
-        }
-        .btn-viber:hover { background: #5a4bd1; }
-        .btn-whatsapp {
-            background: #25d366; color: white;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: background 0.2s;
-        }
-        .btn-whatsapp:hover { background: #1da851; }
+
+        /* АДРЕСА */
         .address-block {
             background: #2d2d2d;
             border: 1px solid #444;
@@ -503,14 +338,201 @@
             margin-top: 8px;
             font-style: italic;
         }
+
+        .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-call {
+            background: #ff8c00; color: #1a1a1a;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700; font-size: 1em;
+            transition: background 0.2s;
+        }
+        .btn-call:hover { background: #ffa500; }
+        .btn-viber {
+            background: #7360f2; color: white;
+            padding: 14px 30px; border-radius: 25px;
+            text-decoration: none; font-weight: 700; font-size: 1em;
+            transition: background 0.2s;
+        }
+        .btn-viber:hover { background: #5a4bd1; }
+
+        /* КАРТА */
         .map-container {
             border-radius: 8px;
             overflow: hidden;
             border: 2px solid #ff8c00;
             margin-bottom: 50px;
         }
+
         footer {
             background: #111;
             border-top: 3px solid #ff8c00;
             color: #888;
             text-align: center;
+            padding: 20px;
+        }
+        footer span { color: #ff8c00; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 3.2em; }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-bg"></div>
+    <div class="header-content">
+        <img src="logo.jpg" alt="Файний Господар" class="header-logo">
+        <h1><span>Файний</span> Господар</h1>
+        <p class="subtitle">Самбір • Львівська область</p>
+        <span class="service-badge">⚙️ Магазин — Сервіс</span>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- АСОРТИМЕНТ -->
+    <h2 class="section-title">🔧 Наш асортимент</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-bg" style="background-image:url('foto7.png')"></div>
+            <div class="card-content">
+                <h3>⛽ Бензоінструмент</h3>
+                <p>Бензопили, мотокоси, культиватори та інша техніка</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image:url('foto4.png')"></div>
+            <div class="card-content">
+                <h3>⚡ Електроінструмент</h3>
+                <p>Дрилі, шурупокрути, шліфмашинки кутові, лобзики</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image:url('foto5.png')"></div>
+            <div class="card-content">
+                <h3>🔩 Витратний інструмент</h3>
+                <p>Диски, свердла, леза, насадки</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-bg" style="background-image:url('foto2.png')"></div>
+            <div class="card-content">
+                <h3>🏗️ Прокат обладнання</h3>
+                <p>Будівельне обладнання в оренду</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ФОТО ІНСТРУМЕНТІВ -->
+    <h2 class="section-title">⚙️ Наш інструмент</h2>
+    <div class="tools-grid">
+        <div class="tool-card">
+            <img src="foto7.png" alt="Бензоінструмент">
+            <p>Бензоінструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto4.png" alt="Електроінструмент">
+            <p>Електроінструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto5.png" alt="Витратний інструмент">
+            <p>Витратний інструмент</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto1.png" alt="Мотокоси">
+            <p>Мотокоси</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto3.png" alt="Шуруповерти">
+            <p>Шуруповерти</p>
+        </div>
+        <div class="tool-card">
+            <img src="foto2.png" alt="Прокат">
+            <p>Прокат обладнання</p>
+        </div>
+    </div>
+
+    <!-- РЕМОНТ -->
+    <div class="repair-block">
+        <div class="repair-icon">🔩</div>
+        <div class="repair-text">
+            <h2>Ремонт бензоінструменту</h2>
+            <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, культиваторів та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
+        </div>
+    </div>
+
+    <!-- БРЕНДИ -->
+    <h2 class="section-title">🏆 Наші бренди</h2>
+    <div class="brands-grid">
+        <a href="https://sturmax.com.ua" target="_blank" class="brand-item brand-sturmax">STURMAX</a>
+        <a href="https://yato24.com.ua/ua/" target="_blank" class="brand-item brand-yato">YATO</a>
+        <a href="https://vitals.ua" target="_blank" class="brand-item brand-vitals">VITALS</a>
+        <a href="https://budpostach.ua" target="_blank" class="brand-item brand-forte">FORTE</a>
+        <a href="https://tekmanshop.com.ua" target="_blank" class="brand-item brand-tekhman">TEKHMAN</a>
+        <a href="https://zenit-profi.com/ua/" target="_blank" class="brand-item brand-zenit">ЗЕНІТ</a>
+        <a href="https://budpostach.ua" target="_blank" class="brand-item brand-grunhelm">GRUNHELM</a>
+        <a href="https://gartner.ua" target="_blank" class="brand-item brand-gartner">GARTNER</a>
+        <a href="https://budpostach.ua" target="_blank" class="brand-item brand-werk">WERK</a>
+        <a href="https://haisser.com.ua" target="_blank" class="brand-item brand-haisser">HAISSER</a>
+    </div>
+
+    <!-- ФОТО МАГАЗИНУ -->
+    <h2 class="section-title">📸 Наш магазин</h2>
+    <div class="photos-grid">
+        <img src="foto3.jpg" alt="Магазин">
+        <img src="foto1.jpg" alt="Магазин">
+        <img src="foto2.jpg" alt="Магазин">
+        <img src="foto4.jpg" alt="Магазин">
+    </div>
+
+    <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
+    <div class="hot-block">
+        <h2>🔥 Гарячі пропозиції</h2>
+        <p>Дивіться наші рекламні ролики та актуальні пропозиції в соціальних мережах!</p>
+        <div class="social-btns">
+            <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
+            <a href="https://www.facebook.com/finegospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
+        </div>
+    </div>
+
+    <!-- КОНТАКТИ -->
+    <div class="contacts">
+        <h2>📞 Контакти</h2>
+        <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
+        <p>🕐 Графік роботи: 8:30 - 17:00</p>
+        <div class="btn-wrap">
+            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
+            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+        </div>
+    </div>
+
+    <!-- АДРЕСА -->
+    <div class="address-block">
+        <h3>📍 Наша адреса</h3>
+        <p>м. Самбір, вул. Івана Франка 89</p>
+        <p class="territory">Територія Спецбази</p>
+    </div>
+
+    <!-- КАРТА -->
+    <h2 class="section-title">🗺️ Як нас знайти</h2>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps?q=вул.+Івана+Франка+89,+Самбір,+Львівська+область&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
+</footer>
+
+</body>
+</html>
