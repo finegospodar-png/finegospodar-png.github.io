@@ -5,152 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Файний Господар - Магазин інструментів</title>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-   /* АНІМАЦІЇ */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-@keyframes pulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(255,140,0,0.4); }
-    50% { box-shadow: 0 0 40px rgba(255,140,0,0.9); }
-}
-@keyframes spark {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-100px) scale(0); opacity: 0; }
-}
-
-.header-title-line1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 1.8em;
-    color: #aaa;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    animation: fadeInDown 1s ease forwards;
-    margin-bottom: 5px;
-}
-.header-title-line2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 7em;
-    color: #ff8c00;
-    letter-spacing: 6px;
-    line-height: 1;
-    text-shadow:
-        0 0 30px rgba(255,140,0,0.5),
-        3px 3px 20px rgba(0,0,0,0.8);
-    animation: fadeInDown 1s ease 0.3s both;
-}
-.header-title-line3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4em;
-    color: #fff;
-    letter-spacing: 10px;
-    line-height: 1;
-    text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
-    animation: fadeInDown 1s ease 0.6s both;
-    margin-bottom: 15px;
-}
-.header-divider {
-    width: 120px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #ff8c00, transparent);
-    margin: 15px auto;
-    animation: fadeInUp 1s ease 0.9s both;
-}
-.header-rotating-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-    color: #ff8c00;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 600;
-    min-height: 25px;
-    animation: fadeInUp 1s ease 1.2s both;
-    margin-bottom: 20px;
-}
-.header-badges {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-    animation: fadeInUp 1s ease 1.5s both;
-}
-.header-badge-item {
-    background: rgba(255,140,0,0.15);
-    border: 1px solid rgba(255,140,0,0.4);
-    color: #ddd;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.8em;
-    letter-spacing: 1px;
-}
-.header-btns {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeInUp 1s ease 1.8s both;
-}
-.header-btn-primary {
-    background: #ff8c00;
-    color: #1a1a1a;
-    padding: 14px 35px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1em;
-    text-decoration: none;
-    letter-spacing: 1px;
-    animation: pulse 2s infinite;
-    transition: transform 0.2s;
-}
-.header-btn-primary:hover { transform: scale(1.05); }
-.header-btn-secondary {
-    background: transparent;
-    color: #ff8c00;
-    border: 2px solid #ff8c00;
-    padding: 14px 35px;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1em;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.2s;
-}
-.header-btn-secondary:hover {
-    background: #ff8c00;
-    color: #1a1a1a;
-}
-
-/* ІСКРИ */
-.sparks {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-.spark {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #ff8c00;
-    border-radius: 50%;
-    animation: spark 3s infinite;
-    opacity: 0;
-}
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -159,11 +13,28 @@
             color: #fff;
         }
 
+        /* АНІМАЦІЇ */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,140,0,0.4); }
+            50% { box-shadow: 0 0 40px rgba(255,140,0,0.9); }
+        }
+        @keyframes spark {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            100% { transform: translateY(-100px) scale(0); opacity: 0; }
+        }
+
         /* НАВІГАЦІЙНЕ МЕНЮ */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 100%;
             background: rgba(20,20,20,0.97);
             border-bottom: 2px solid #ff8c00;
@@ -231,12 +102,13 @@
         .nav-mobile a:hover { color: #ff8c00; }
         .nav-mobile.open { display: flex; }
 
+        /* ШАПКА */
         header {
             position: relative;
-            padding: 60px 20px;
+            padding: 80px 20px 60px;
             text-align: center;
             overflow: hidden;
-            min-height: 380px;
+            min-height: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -250,64 +122,137 @@
             background-image: url('logo.jpg');
             background-size: cover;
             background-position: center;
-            filter: blur(8px) brightness(0.3);
+            filter: blur(8px) brightness(0.25);
             transform: scale(1.1);
             z-index: 0;
         }
+        .sparks {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ff8c00;
+            border-radius: 50%;
+            animation: spark 3s infinite;
+            opacity: 0;
+        }
         .header-content { position: relative; z-index: 1; }
         .header-logo {
-            height: 160px;
+            height: 150px;
             display: block;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             filter: drop-shadow(0 0 20px rgba(255,140,0,0.8));
+            animation: fadeInDown 1s ease both;
         }
-        header h1 {
+        .header-title-line1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 1.2em;
+            color: #aaa;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            animation: fadeInDown 1s ease forwards;
+            margin-bottom: 5px;
+        }
+        .header-title-line2 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 6em;
+            font-size: 7em;
+            color: #ff8c00;
+            letter-spacing: 6px;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(255,140,0,0.5), 3px 3px 20px rgba(0,0,0,0.8);
+            animation: fadeInDown 1s ease 0.3s both;
+        }
+        .header-title-line3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4em;
             color: #fff;
-            letter-spacing: 8px;
+            letter-spacing: 10px;
             line-height: 1;
             text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
+            animation: fadeInDown 1s ease 0.6s both;
+            margin-bottom: 10px;
         }
-        header h1 span { color: #ff8c00; }
-        .subtitle {
-            margin: 8px 0 0;
-            color: #ddd;
+        .header-divider {
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
+            margin: 12px auto;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+        .header-rotating-text {
+            font-family: 'Montserrat', sans-serif;
             font-size: 1em;
-            font-weight: 300;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-        .service-badge {
-            display: inline-block;
-            background: #ff8c00;
-            color: #1a1a1a;
-            font-weight: 700;
-            font-size: 1.1em;
-            padding: 8px 25px;
-            border-radius: 20px;
-            margin-top: 15px;
+            color: #ff8c00;
             letter-spacing: 2px;
             text-transform: uppercase;
+            font-weight: 600;
+            min-height: 25px;
+            animation: fadeInUp 1s ease 1.2s both;
+            margin-bottom: 20px;
+            transition: opacity 0.5s;
         }
-        .header-cta {
-            display: inline-block;
-            margin-top: 20px;
+        .header-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+        .header-badge-item {
+            background: rgba(255,140,0,0.15);
+            border: 1px solid rgba(255,140,0,0.4);
+            color: #ddd;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+        }
+        .header-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1.8s both;
+        }
+        .header-btn-primary {
+            background: #ff8c00;
+            color: #1a1a1a;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1em;
+            text-decoration: none;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+            transition: transform 0.2s;
+        }
+        .header-btn-primary:hover { transform: scale(1.05); }
+        .header-btn-secondary {
             background: transparent;
             color: #ff8c00;
             border: 2px solid #ff8c00;
-            padding: 12px 35px;
-            border-radius: 25px;
+            padding: 14px 35px;
+            border-radius: 30px;
             font-weight: 700;
             font-size: 1em;
             text-decoration: none;
             letter-spacing: 1px;
             transition: all 0.2s;
         }
-        .header-cta:hover {
+        .header-btn-secondary:hover {
             background: #ff8c00;
             color: #1a1a1a;
         }
+
         .container {
             max-width: 960px;
             margin: 40px auto;
@@ -324,6 +269,8 @@
             border-bottom: 2px solid #333;
             padding-bottom: 10px;
         }
+
+        /* АСОРТИМЕНТ */
         .cards {
             display: flex;
             gap: 20px;
@@ -400,6 +347,8 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
+
+        /* ФОТО ІНСТРУМЕНТІВ */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -417,11 +366,7 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(255,140,0,0.2);
         }
-        .tool-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
+        .tool-card img { width: 100%; height: 160px; object-fit: cover; }
         .tool-card p {
             padding: 10px;
             text-align: center;
@@ -430,6 +375,8 @@
             font-size: 1em;
             letter-spacing: 1px;
         }
+
+        /* РЕМОНТ */
         .repair-block {
             position: relative;
             overflow: hidden;
@@ -453,18 +400,13 @@
             z-index: 0;
         }
         .repair-content { position: relative; z-index: 1; }
-        .repair-content .repair-icon {
-            font-size: 4em;
-            display: block;
-            margin-bottom: 15px;
-        }
+        .repair-content .repair-icon { font-size: 4em; display: block; margin-bottom: 15px; }
         .repair-content h2 {
             font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
             font-size: 2.5em;
             letter-spacing: 3px;
             margin-bottom: 15px;
-            text-align: center;
         }
         .repair-content p {
             color: #fff;
@@ -473,6 +415,8 @@
             max-width: 700px;
             margin: 0 auto;
         }
+
+        /* БРЕНДИ */
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
@@ -491,10 +435,7 @@
             text-decoration: none;
             display: inline-block;
         }
-        .brand-item:hover {
-            transform: scale(1.08);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
+        .brand-item:hover { transform: scale(1.08); box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
         .brand-yato     { background: #cc0000; color: #fff; border: 2px solid #ff0000; }
         .brand-vitals   { background: #003399; color: #fff; border: 2px solid #0044cc; }
         .brand-forte    { background: #1a6600; color: #fff; border: 2px solid #228800; }
@@ -506,6 +447,8 @@
         .brand-werk     { background: #cc0000; color: #fff; border: 2px solid #ee0000; }
         .brand-haisser  { background: #003399; color: #ffcc00; border: 2px solid #ffcc00; }
         .brand-oleomac  { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
+
+        /* ФОТО МАГАЗИНУ */
         .photos-grid {
             display: flex;
             gap: 15px;
@@ -521,10 +464,9 @@
             border: 2px solid #444;
             transition: transform 0.2s;
         }
-        .photos-grid img:hover {
-            transform: scale(1.02);
-            border-color: #ff8c00;
-        }
+        .photos-grid img:hover { transform: scale(1.02); border-color: #ff8c00; }
+
+        /* ГАРЯЧІ ПРОПОЗИЦІЇ */
         .hot-block {
             background: linear-gradient(135deg, #2d1a00, #1a1a1a);
             border: 2px solid #ff8c00;
@@ -560,11 +502,7 @@
             transition: transform 0.2s;
         }
         .poster-item:hover { transform: scale(1.02); }
-        .poster-item img {
-            width: 100%;
-            display: block;
-            cursor: pointer;
-        }
+        .poster-item img { width: 100%; display: block; cursor: pointer; }
         .social-btns {
             display: flex;
             gap: 15px;
@@ -588,6 +526,8 @@
             font-size: 1em; transition: all 0.2s;
         }
         .btn-facebook:hover { background: #0d5ab8; }
+
+        /* КОНТАКТИ */
         .contacts {
             background: #2d2d2d;
             border: 1px solid #444;
@@ -627,6 +567,8 @@
             font-size: 1em; transition: background 0.2s;
         }
         .btn-whatsapp:hover { background: #1da851; }
+
+        /* АДРЕСА */
         .address-block {
             background: #2d2d2d;
             border: 1px solid #444;
@@ -649,12 +591,15 @@
             margin-top: 8px;
             font-style: italic;
         }
+
+        /* КАРТА */
         .map-container {
             border-radius: 8px;
             overflow: hidden;
             border: 2px solid #ff8c00;
             margin-bottom: 50px;
         }
+
         footer {
             background: #111;
             border-top: 3px solid #ff8c00;
@@ -663,6 +608,8 @@
             padding: 20px;
         }
         footer span { color: #ff8c00; }
+
+        /* МОДАЛЬНЕ ВІКНО */
         #imgModal {
             display: none;
             position: fixed;
@@ -683,6 +630,8 @@
 
         @media (max-width: 768px) {
             header h1 { font-size: 3.2em; }
+            .header-title-line2 { font-size: 4em; }
+            .header-title-line3 { font-size: 2.5em; }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-links { display: none; }
             .nav-burger { display: block; }
@@ -713,14 +662,28 @@
     </div>
 </nav>
 
+<!-- ШАПКА -->
 <header id="top">
     <div class="header-bg"></div>
+    <div class="sparks" id="sparks"></div>
     <div class="header-content">
         <img src="logo.jpg" alt="Файний Господар" class="header-logo">
-        <h1><span>Файний</span> Господар</h1>
-        <p class="subtitle">Самбір • Львівська область</p>
-        <span class="service-badge">⚙️ Магазин — Сервіс</span>
-        <a href="#kontakty" class="header-cta">📞 Зв'язатись з нами</a>
+        <div class="header-title-line1">магазин — сервіс</div>
+        <div class="header-title-line2">ФАЙНИЙ</div>
+        <div class="header-title-line3">ГОСПОДАР</div>
+        <div class="header-divider"></div>
+        <div class="header-rotating-text" id="rotatingText">
+            Інструмент для професіоналів
+        </div>
+        <div class="header-badges">
+            <span class="header-badge-item">📍 Самбір</span>
+            <span class="header-badge-item">⚙️ Ремонт техніки</span>
+            <span class="header-badge-item">🏗️ Прокат обладнання</span>
+        </div>
+        <div class="header-btns">
+            <a href="tel:+380964502734" class="header-btn-primary">📞 Зателефонувати</a>
+            <a href="#asortyment" class="header-btn-secondary">🔧 Наш асортимент</a>
+        </div>
     </div>
 </header>
 
@@ -927,57 +890,10 @@
 </footer>
 
 <!-- ПЛАВАЮЧІ КНОПКИ -->
-<div style="
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 9998;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-end;">
-    <a href="tel:+380964502734" style="
-        background: #ff8c00;
-        color: #1a1a1a;
-        width: 60px; height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.6em;
-        box-shadow: 0 4px 20px rgba(255,140,0,0.6);
-        text-decoration: none;
-        transition: transform 0.2s;"
-        onmouseover="this.style.transform='scale(1.1)'"
-        onmouseout="this.style.transform='scale(1)'">📞</a>
-    <a href="viber://chat?number=%2B380964502734" style="
-        background: #7360f2;
-        color: white;
-        width: 60px; height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.6em;
-        box-shadow: 0 4px 20px rgba(115,96,242,0.6);
-        text-decoration: none;
-        transition: transform 0.2s;"
-        onmouseover="this.style.transform='scale(1.1)'"
-        onmouseout="this.style.transform='scale(1)'">💬</a>
-    <a href="https://wa.me/380931616926" target="_blank" style="
-        background: #25d366;
-        color: white;
-        width: 60px; height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.6em;
-        box-shadow: 0 4px 20px rgba(37,211,102,0.6);
-        text-decoration: none;
-        transition: transform 0.2s;"
-        onmouseover="this.style.transform='scale(1.1)'"
-        onmouseout="this.style.transform='scale(1)'">📱</a>
+<div style="position:fixed; bottom:30px; right:30px; z-index:9998; display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
+    <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(255,140,0,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📞</a>
+    <a href="viber://chat?number=%2B380964502734" style="background:#7360f2; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(115,96,242,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">💬</a>
+    <a href="https://wa.me/380931616926" target="_blank" style="background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(37,211,102,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📱</a>
 </div>
 
 <!-- МОДАЛЬНЕ ВІКНО -->
@@ -1005,6 +921,42 @@ function closeImg() {
 function toggleMenu() {
     document.getElementById('navMobile').classList.toggle('open');
 }
+
+// РОТАЦІЯ ТЕКСТУ
+const texts = [
+    "Інструмент для професіоналів",
+    "Ремонт бензотехніки",
+    "Прокат будівельного обладнання",
+    "Якісні бренди — доступні ціни",
+    "Самбір • вул. Івана Франка 89"
+];
+let textIndex = 0;
+setInterval(() => {
+    textIndex = (textIndex + 1) % texts.length;
+    const el = document.getElementById('rotatingText');
+    el.style.opacity = '0';
+    setTimeout(() => {
+        el.textContent = texts[textIndex];
+        el.style.opacity = '1';
+        el.style.transition = 'opacity 0.5s';
+    }, 300);
+}, 3000);
+
+// ІСКРИ
+function createSparks() {
+    const container = document.getElementById('sparks');
+    if (!container) return;
+    for (let i = 0; i < 15; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        spark.style.left = Math.random() * 100 + '%';
+        spark.style.top = Math.random() * 100 + '%';
+        spark.style.animationDelay = Math.random() * 3 + 's';
+        spark.style.animationDuration = (2 + Math.random() * 2) + 's';
+        container.appendChild(spark);
+    }
+}
+createSparks();
 </script>
 
 </body>
