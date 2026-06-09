@@ -13,7 +13,6 @@
             color: #fff;
         }
 
-        /* АНІМАЦІЇ */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -31,7 +30,6 @@
             100% { transform: translateY(-100px) scale(0); opacity: 0; }
         }
 
-        /* НАВІГАЦІЙНЕ МЕНЮ */
         nav {
             position: fixed;
             top: 0; left: 0;
@@ -102,7 +100,6 @@
         .nav-mobile a:hover { color: #ff8c00; }
         .nav-mobile.open { display: flex; }
 
-        /* ШАПКА */
         header {
             position: relative;
             padding: 80px 20px 60px;
@@ -136,8 +133,7 @@
         }
         .spark {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 4px; height: 4px;
             background: #ff8c00;
             border-radius: 50%;
             animation: spark 3s infinite;
@@ -270,7 +266,102 @@
             padding-bottom: 10px;
         }
 
-        /* АСОРТИМЕНТ */
+        /* ЧОМУ ОБИРАЮТЬ НАС */
+        .why-us {
+            margin-bottom: 50px;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .why-item {
+            background: #2d2d2d;
+            border: 1px solid #444;
+            border-top: 3px solid #ff8c00;
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .why-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255,140,0,0.2);
+        }
+        .why-icon {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .why-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #ff8c00;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .why-item p {
+            color: #aaa;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+
+        /* ДОСТАВКА */
+        .delivery-block {
+            background: linear-gradient(135deg, #1a2d1a, #1a1a1a);
+            border: 2px solid #25d366;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            box-shadow: 0 0 25px rgba(37,211,102,0.15);
+        }
+        .delivery-icon { font-size: 4em; }
+        .delivery-text { flex: 1; min-width: 200px; }
+        .delivery-text h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #25d366;
+            font-size: 2em;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .delivery-text p {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .delivery-btns {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn-delivery-call {
+            background: #25d366;
+            color: #1a1a1a;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95em;
+            transition: background 0.2s;
+        }
+        .btn-delivery-call:hover { background: #1da851; }
+        .btn-delivery-fb {
+            background: #1877f2;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95em;
+            transition: background 0.2s;
+        }
+        .btn-delivery-fb:hover { background: #0d5ab8; }
+
         .cards {
             display: flex;
             gap: 20px;
@@ -347,8 +438,6 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
-
-        /* ФОТО ІНСТРУМЕНТІВ */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -375,8 +464,6 @@
             font-size: 1em;
             letter-spacing: 1px;
         }
-
-        /* РЕМОНТ */
         .repair-block {
             position: relative;
             overflow: hidden;
@@ -415,8 +502,6 @@
             max-width: 700px;
             margin: 0 auto;
         }
-
-        /* БРЕНДИ */
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
@@ -447,8 +532,6 @@
         .brand-werk     { background: #cc0000; color: #fff; border: 2px solid #ee0000; }
         .brand-haisser  { background: #003399; color: #ffcc00; border: 2px solid #ffcc00; }
         .brand-oleomac  { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
-
-        /* ФОТО МАГАЗИНУ */
         .photos-grid {
             display: flex;
             gap: 15px;
@@ -465,8 +548,6 @@
             transition: transform 0.2s;
         }
         .photos-grid img:hover { transform: scale(1.02); border-color: #ff8c00; }
-
-        /* ГАРЯЧІ ПРОПОЗИЦІЇ */
         .hot-block {
             background: linear-gradient(135deg, #2d1a00, #1a1a1a);
             border: 2px solid #ff8c00;
@@ -526,8 +607,6 @@
             font-size: 1em; transition: all 0.2s;
         }
         .btn-facebook:hover { background: #0d5ab8; }
-
-        /* КОНТАКТИ */
         .contacts {
             background: #2d2d2d;
             border: 1px solid #444;
@@ -567,8 +646,6 @@
             font-size: 1em; transition: background 0.2s;
         }
         .btn-whatsapp:hover { background: #1da851; }
-
-        /* АДРЕСА */
         .address-block {
             background: #2d2d2d;
             border: 1px solid #444;
@@ -591,15 +668,12 @@
             margin-top: 8px;
             font-style: italic;
         }
-
-        /* КАРТА */
         .map-container {
             border-radius: 8px;
             overflow: hidden;
             border: 2px solid #ff8c00;
             margin-bottom: 50px;
         }
-
         footer {
             background: #111;
             border-top: 3px solid #ff8c00;
@@ -608,8 +682,6 @@
             padding: 20px;
         }
         footer span { color: #ff8c00; }
-
-        /* МОДАЛЬНЕ ВІКНО */
         #imgModal {
             display: none;
             position: fixed;
@@ -629,12 +701,15 @@
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 3.2em; }
             .header-title-line2 { font-size: 4em; }
             .header-title-line3 { font-size: 2.5em; }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-links { display: none; }
             .nav-burger { display: block; }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .why-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -645,6 +720,7 @@
     <div class="nav-inner">
         <a href="#top" class="nav-logo">🔧 ФАЙНИЙ ГОСПОДАР</a>
         <ul class="nav-links">
+            <li><a href="#chomu">Про нас</a></li>
             <li><a href="#asortyment">Асортимент</a></li>
             <li><a href="#remont">Ремонт</a></li>
             <li><a href="#brendy">Бренди</a></li>
@@ -654,6 +730,7 @@
         <div class="nav-burger" onclick="toggleMenu()">☰</div>
     </div>
     <div class="nav-mobile" id="navMobile">
+        <a href="#chomu" onclick="toggleMenu()">Про нас</a>
         <a href="#asortyment" onclick="toggleMenu()">Асортимент</a>
         <a href="#remont" onclick="toggleMenu()">Ремонт</a>
         <a href="#brendy" onclick="toggleMenu()">Бренди</a>
@@ -688,6 +765,56 @@
 </header>
 
 <div class="container">
+
+    <!-- ЧОМУ ОБИРАЮТЬ НАС -->
+    <div class="why-us" id="chomu">
+        <h2 class="section-title">⭐ Чому обирають нас</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <span class="why-icon">🏆</span>
+                <h3>11 років досвіду</h3>
+                <p>Працюємо з 2014 року. Знаємо свою справу і цінуємо кожного клієнта</p>
+            </div>
+            <div class="why-item">
+                <span class="why-icon">📍</span>
+                <h3>Зручне розташування</h3>
+                <p>Знаходимось на території торгового містечка "Спецбаза" — поруч з іншими будівельними магазинами</p>
+            </div>
+            <div class="why-item">
+                <span class="why-icon">🔧</span>
+                <h3>Сервісний центр</h3>
+                <p>Власний сервісний центр. Гарантійний та післягарантійний ремонт. Запчастини до бензоінструменту</p>
+            </div>
+            <div class="why-item">
+                <span class="why-icon">✅</span>
+                <h3>Гарантія на всі товари</h3>
+                <p>Офіційна гарантія на весь асортимент. Працюємо тільки з перевіреними брендами</p>
+            </div>
+            <div class="why-item">
+                <span class="why-icon">📦</span>
+                <h3>Широкий асортимент</h3>
+                <p>Великий вибір інструменту та витратних матеріалів. Все для будівництва та господарства</p>
+            </div>
+            <div class="why-item">
+                <span class="why-icon">👨‍🔧</span>
+                <h3>Кваліфіковані консультанти</h3>
+                <p>Досвідчені продавці та майстри допоможуть підібрати потрібний інструмент</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ДОСТАВКА -->
+    <div class="delivery-block">
+        <div class="delivery-icon">🚚</div>
+        <div class="delivery-text">
+            <h2>Доставка товару</h2>
+            <p>Доставляємо обладнання та товари по Самбору та околицях. Швидко, зручно, надійно!</p>
+            <div class="delivery-btns">
+                <a href="tel:+380976461006" class="btn-delivery-call">📞 +38 097 646 1006</a>
+                <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Файна Доставка Самбір</a>
+            </div>
+        </div>
+    </div>
 
     <!-- АСОРТИМЕНТ -->
     <h2 class="section-title" id="asortyment">🔧 Наш асортимент</h2>
@@ -844,7 +971,7 @@
         <p style="color:#aaa;">Більше пропозицій у наших соцмережах:</p>
         <div class="social-btns">
             <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
-            <a href="https://www.facebook.com/finegospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
+            <a href="https://www.facebook.com/FineGospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
         </div>
     </div>
 
@@ -908,21 +1035,16 @@ function toggleList(card) {
     list.classList.toggle('open');
     toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
 }
-
 function openImg(src) {
     document.getElementById('modalImg').src = src;
     document.getElementById('imgModal').style.display = 'flex';
 }
-
 function closeImg() {
     document.getElementById('imgModal').style.display = 'none';
 }
-
 function toggleMenu() {
     document.getElementById('navMobile').classList.toggle('open');
 }
-
-// РОТАЦІЯ ТЕКСТУ
 const texts = [
     "Інструмент для професіоналів",
     "Ремонт бензотехніки",
@@ -941,8 +1063,6 @@ setInterval(() => {
         el.style.transition = 'opacity 0.5s';
     }, 300);
 }, 3000);
-
-// ІСКРИ
 function createSparks() {
     const container = document.getElementById('sparks');
     if (!container) return;
