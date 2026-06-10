@@ -244,10 +244,7 @@
             letter-spacing: 1px;
             transition: all 0.2s;
         }
-        .header-btn-secondary:hover {
-            background: #ff8c00;
-            color: #1a1a1a;
-        }
+        .header-btn-secondary:hover { background: #ff8c00; color: #1a1a1a; }
 
         .container {
             max-width: 960px;
@@ -267,9 +264,7 @@
         }
 
         /* ЧОМУ ОБИРАЮТЬ НАС */
-        .why-us {
-            margin-bottom: 50px;
-        }
+        .why-us { margin-bottom: 50px; }
         .why-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -288,11 +283,7 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255,140,0,0.2);
         }
-        .why-icon {
-            font-size: 2.5em;
-            display: block;
-            margin-bottom: 12px;
-        }
+        .why-icon { font-size: 2.5em; display: block; margin-bottom: 12px; }
         .why-item h3 {
             font-family: 'Bebas Neue', sans-serif;
             color: #ff8c00;
@@ -300,80 +291,29 @@
             letter-spacing: 1px;
             margin-bottom: 8px;
         }
-        .why-item p {
-            color: #aaa;
-            font-size: 0.85em;
-            line-height: 1.6;
-        }
+        .why-item p { color: #aaa; font-size: 0.85em; line-height: 1.6; }
 
-        /* ДОСТАВКА */
-        .delivery-block {
-            background: linear-gradient(135deg, #1a2d1a, #1a1a1a);
-            border: 2px solid #25d366;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 50px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            box-shadow: 0 0 25px rgba(37,211,102,0.15);
-        }
-        .delivery-icon { font-size: 4em; }
-        .delivery-text { flex: 1; min-width: 200px; }
-        .delivery-text h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #25d366;
-            font-size: 2em;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-        .delivery-text p {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        .delivery-btns {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .btn-delivery-call {
-            background: #25d366;
-            color: #1a1a1a;
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95em;
-            transition: background 0.2s;
-        }
-        .btn-delivery-call:hover { background: #1da851; }
-        .btn-delivery-fb {
-            background: #1877f2;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95em;
-            transition: background 0.2s;
-        }
-        .btn-delivery-fb:hover { background: #0d5ab8; }
-
-        .cards {
+        /* АСОРТИМЕНТ + ДОСТАВКА */
+        .assortment-delivery {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             margin-bottom: 50px;
+        }
+        .assortment-col { flex: 2; min-width: 300px; }
+        .delivery-col { flex: 1; min-width: 250px; }
+
+        .cards {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         .card {
             position: relative;
             border-radius: 10px;
             padding: 20px 15px;
             flex: 1;
-            min-width: 200px;
+            min-width: 180px;
             overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
             min-height: 200px;
@@ -438,6 +378,68 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
+
+        /* ДОСТАВКА */
+        .delivery-block {
+            background: linear-gradient(135deg, #1a2d1a, #1a1a1a);
+            border: 2px solid #25d366;
+            border-radius: 12px;
+            padding: 20px;
+            height: 100%;
+            box-shadow: 0 0 20px rgba(37,211,102,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+        }
+        .delivery-block img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 8px;
+        }
+        .delivery-block h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: #25d366;
+            font-size: 1.6em;
+            letter-spacing: 2px;
+        }
+        .delivery-block p {
+            color: #ccc;
+            font-size: 0.85em;
+            line-height: 1.6;
+        }
+        .delivery-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+        .btn-delivery-call {
+            background: #25d366;
+            color: #1a1a1a;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85em;
+            transition: background 0.2s;
+            text-align: center;
+        }
+        .btn-delivery-call:hover { background: #1da851; }
+        .btn-delivery-fb {
+            background: #1877f2;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85em;
+            transition: background 0.2s;
+            text-align: center;
+        }
+        .btn-delivery-fb:hover { background: #0d5ab8; }
+
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -707,6 +709,7 @@
             .nav-links { display: none; }
             .nav-burger { display: block; }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .assortment-delivery { flex-direction: column; }
         }
         @media (max-width: 480px) {
             .why-grid { grid-template-columns: 1fr; }
@@ -749,9 +752,7 @@
         <div class="header-title-line2">ФАЙНИЙ</div>
         <div class="header-title-line3">ГОСПОДАР</div>
         <div class="header-divider"></div>
-        <div class="header-rotating-text" id="rotatingText">
-            Інструмент для професіоналів
-        </div>
+        <div class="header-rotating-text" id="rotatingText">Інструмент для професіоналів</div>
         <div class="header-badges">
             <span class="header-badge-item">📍 Самбір</span>
             <span class="header-badge-item">⚙️ Ремонт техніки</span>
@@ -803,22 +804,9 @@
         </div>
     </div>
 
-    <!-- ДОСТАВКА -->
-    <div class="delivery-block">
-        <div class="delivery-icon">🚚</div>
-        <div class="delivery-text">
-            <h2>Доставка товару</h2>
-            <p>Доставляємо обладнання та товари по Самбору та околицях. Швидко, зручно, надійно!</p>
-            <div class="delivery-btns">
-                <a href="tel:+380976461006" class="btn-delivery-call">📞 +38 097 646 1006</a>
-                <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Файна Доставка Самбір</a>
-            </div>
-        </div>
-    </div>
-
     <!-- АСОРТИМЕНТ -->
     <h2 class="section-title" id="asortyment">🔧 Наш асортимент</h2>
-    <div class="cards">
+    <div class="cards" style="margin-bottom:50px;">
         <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto7.png')"></div>
             <div class="card-content">
@@ -874,23 +862,38 @@
                 </div>
             </div>
         </div>
-        <div class="card" onclick="toggleList(this)">
-            <div class="card-bg" style="background-image:url('foto2.png')"></div>
-            <div class="card-content">
-                <h3>🏗️ Прокат обладнання</h3>
-                <p>Будівельне обладнання в оренду</p>
-                <span class="card-toggle">▼ Детальніше</span>
-                <div class="card-list">
-                    <ul>
-                        <li><span>🔄</span> Бетонозмішувачі 160л</li>
-                        <li><span>🔄</span> Бетонозмішувачі 250л</li>
-                        <li><span>🧱</span> Шліфмашинки для стін</li>
-                        <li><span>📳</span> Вібратор для бетону</li>
-                        <li><span>🔨</span> Відбійні молотки</li>
-                        <li><span>⚒️</span> Перфоратори SDS max</li>
-                        <li><span>🏗️</span> Віброплити</li>
-                        <li><span>📳</span> Вібронога</li>
-                    </ul>
+
+        <!-- ПРОКАТ + ДОСТАВКА ПОРУЧ -->
+        <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:15px;">
+            <div class="card" onclick="toggleList(this)" style="flex:1;">
+                <div class="card-bg" style="background-image:url('foto2.png')"></div>
+                <div class="card-content">
+                    <h3>🏗️ Прокат обладнання</h3>
+                    <p>Будівельне обладнання в оренду</p>
+                    <span class="card-toggle">▼ Детальніше</span>
+                    <div class="card-list">
+                        <ul>
+                            <li><span>🔄</span> Бетонозмішувачі 160л</li>
+                            <li><span>🔄</span> Бетонозмішувачі 250л</li>
+                            <li><span>🧱</span> Шліфмашинки для стін</li>
+                            <li><span>📳</span> Вібратор для бетону</li>
+                            <li><span>🔨</span> Відбійні молотки</li>
+                            <li><span>⚒️</span> Перфоратори SDS max</li>
+                            <li><span>🏗️</span> Віброплити</li>
+                            <li><span>📳</span> Вібронога</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- БЛОК ДОСТАВКИ -->
+            <div class="delivery-block">
+                <img src="delivery_logo.jpg" alt="Файна Доставка Самбір">
+                <h2>🚚 Доставка</h2>
+                <p>Доставляємо товари по Самбору та околицях!</p>
+                <div class="delivery-btns">
+                    <a href="tel:+380976461006" class="btn-delivery-call">📞 +38 097 646 1006</a>
+                    <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Файна Доставка</a>
                 </div>
             </div>
         </div>
