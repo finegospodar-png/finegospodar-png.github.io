@@ -293,15 +293,12 @@
         }
         .why-item p { color: #aaa; font-size: 0.85em; line-height: 1.6; }
 
-        /* АСОРТИМЕНТ + ДОСТАВКА */
         .assortment-delivery {
             display: flex;
             gap: 20px;
             flex-wrap: wrap;
             margin-bottom: 50px;
         }
-        .assortment-col { flex: 2; min-width: 300px; }
-        .delivery-col { flex: 1; min-width: 250px; }
 
         .cards {
             display: flex;
@@ -379,64 +376,65 @@
             letter-spacing: 1px;
         }
 
-        /* ДОСТАВКА */
+        /* ДОСТАВКА - КОМПАКТНИЙ БЛОК */
         .delivery-block {
             background: linear-gradient(135deg, #1a2d1a, #1a1a1a);
             border: 2px solid #25d366;
             border-radius: 12px;
-            padding: 20px;
-            height: 100%;
-            box-shadow: 0 0 20px rgba(37,211,102,0.15);
+            padding: 15px;
+            margin-top: 15px;
+            box-shadow: 0 0 15px rgba(37,211,102,0.15);
             display: flex;
-            flex-direction: column;
             align-items: center;
-            text-align: center;
-            gap: 12px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         .delivery-block img {
-            width: 100%;
-            max-width: 150px;
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
             border-radius: 8px;
+            flex-shrink: 0;
         }
-        .delivery-block h2 {
+        .delivery-info { flex: 1; min-width: 150px; }
+        .delivery-info h2 {
             font-family: 'Bebas Neue', sans-serif;
             color: #25d366;
-            font-size: 1.6em;
-            letter-spacing: 2px;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
         }
-        .delivery-block p {
+        .delivery-info p {
             color: #ccc;
-            font-size: 0.85em;
-            line-height: 1.6;
+            font-size: 0.8em;
+            line-height: 1.4;
+            margin-bottom: 8px;
         }
         .delivery-btns {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
+            gap: 8px;
+            flex-wrap: wrap;
         }
         .btn-delivery-call {
             background: #25d366;
             color: #1a1a1a;
-            padding: 10px 15px;
-            border-radius: 25px;
+            padding: 6px 14px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.85em;
+            font-size: 0.8em;
             transition: background 0.2s;
-            text-align: center;
         }
         .btn-delivery-call:hover { background: #1da851; }
         .btn-delivery-fb {
             background: #1877f2;
             color: white;
-            padding: 10px 15px;
-            border-radius: 25px;
+            padding: 6px 14px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.85em;
+            font-size: 0.8em;
             transition: background 0.2s;
-            text-align: center;
         }
         .btn-delivery-fb:hover { background: #0d5ab8; }
 
@@ -709,10 +707,10 @@
             .nav-links { display: none; }
             .nav-burger { display: block; }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
-            .assortment-delivery { flex-direction: column; }
         }
         @media (max-width: 480px) {
             .why-grid { grid-template-columns: 1fr; }
+            .delivery-block { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -774,98 +772,96 @@
             <div class="why-item">
                 <span class="why-icon">🏆</span>
                 <h3>11 років досвіду</h3>
-                <p>Працюємо з 2014 року. Знаємо свою справу і цінуємо кожного клієнта</p>
+                <p>Працюємо з 2015 року. За цей час пройшли шлях від маленької точки до повноцінного магазину-сервісу. Знаємо свою справу і цінуємо кожного клієнта</p>
             </div>
             <div class="why-item">
                 <span class="why-icon">📍</span>
-                <h3>Зручне розташування</h3>
-                <p>Знаходимось на території торгового містечка "Спецбаза" — поруч з іншими будівельними магазинами</p>
+                <h3>Торгове містечко "Спецбаза"</h3>
+                <p>Зручне розташування — поруч десятки магазинів будматеріалів та інструменту. Один заїзд — все що потрібно для ремонту чи будівництва</p>
             </div>
             <div class="why-item">
                 <span class="why-icon">🔧</span>
-                <h3>Сервісний центр</h3>
-                <p>Власний сервісний центр. Гарантійний та післягарантійний ремонт. Запчастини до бензоінструменту</p>
+                <h3>Власний сервісний центр</h3>
+                <p>Гарантійний та післягарантійний ремонт бензо- та електроінструменту. Завжди в наявності запчастини та оригінальні комплектуючі</p>
             </div>
             <div class="why-item">
                 <span class="why-icon">✅</span>
                 <h3>Гарантія на всі товари</h3>
-                <p>Офіційна гарантія на весь асортимент. Працюємо тільки з перевіреними брендами</p>
+                <p>Офіційна гарантія від виробника на весь асортимент. Працюємо тільки з перевіреними брендами — жодного "сірого" імпорту</p>
             </div>
             <div class="why-item">
                 <span class="why-icon">📦</span>
                 <h3>Широкий асортимент</h3>
-                <p>Великий вибір інструменту та витратних матеріалів. Все для будівництва та господарства</p>
+                <p>Бензо- та електроінструмент, витратні матеріали, прокат обладнання — все під одним дахом для дому, саду та будівництва</p>
             </div>
             <div class="why-item">
                 <span class="why-icon">👨‍🔧</span>
                 <h3>Кваліфіковані консультанти</h3>
-                <p>Досвідчені продавці та майстри допоможуть підібрати потрібний інструмент</p>
+                <p>Наші продавці та майстри — практики з багаторічним досвідом. Підкажуть, підберуть, не нав'яжуть зайвого</p>
             </div>
         </div>
     </div>
 
     <!-- АСОРТИМЕНТ -->
     <h2 class="section-title" id="asortyment">🔧 Наш асортимент</h2>
-    <div class="cards" style="margin-bottom:50px;">
-        <div class="card" onclick="toggleList(this)">
-            <div class="card-bg" style="background-image:url('foto7.png')"></div>
-            <div class="card-content">
-                <h3>⛽ Бензоінструмент</h3>
-                <p>Бензопили, мотокоси, культиватори, генератори</p>
-                <span class="card-toggle">▼ Детальніше</span>
-                <div class="card-list">
-                    <ul>
-                        <li><span>🪚</span> Бензопили</li>
-                        <li><span>🌿</span> Мотокоси</li>
-                        <li><span>⚡</span> Генератори</li>
-                        <li><span>🚜</span> Культиватори</li>
-                    </ul>
+    <div class="assortment-delivery">
+        <div class="cards">
+            <div class="card" onclick="toggleList(this)">
+                <div class="card-bg" style="background-image:url('foto7.png')"></div>
+                <div class="card-content">
+                    <h3>⛽ Бензоінструмент</h3>
+                    <p>Бензопили, мотокоси, культиватори, генератори</p>
+                    <span class="card-toggle">▼ Детальніше</span>
+                    <div class="card-list">
+                        <ul>
+                            <li><span>🪚</span> Бензопили</li>
+                            <li><span>🌿</span> Мотокоси</li>
+                            <li><span>⚡</span> Генератори</li>
+                            <li><span>🚜</span> Культиватори</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card" onclick="toggleList(this)">
-            <div class="card-bg" style="background-image:url('foto4.png')"></div>
-            <div class="card-content">
-                <h3>⚡ Електроінструмент</h3>
-                <p>Дрилі, шуруповерти, шліфмашинки, лобзики</p>
-                <span class="card-toggle">▼ Детальніше</span>
-                <div class="card-list">
-                    <ul>
-                        <li><span>🔧</span> Дрилі</li>
-                        <li><span>🔩</span> Перфоратори</li>
-                        <li><span>🔩</span> Шуруповерти</li>
-                        <li><span>⚙️</span> Шліфмашинки кутові</li>
-                        <li><span>🪚</span> Лобзики</li>
-                        <li><span>🪚</span> Електропили</li>
-                        <li><span>✨</span> Полірувальні машинки</li>
-                        <li><span>💨</span> Компресори</li>
-                        <li><span>🌿</span> Електрокоси</li>
-                        <li><span>🧱</span> Шліфмашинки для стін</li>
-                    </ul>
+            <div class="card" onclick="toggleList(this)">
+                <div class="card-bg" style="background-image:url('foto4.png')"></div>
+                <div class="card-content">
+                    <h3>⚡ Електроінструмент</h3>
+                    <p>Дрилі, шуруповерти, шліфмашинки, лобзики</p>
+                    <span class="card-toggle">▼ Детальніше</span>
+                    <div class="card-list">
+                        <ul>
+                            <li><span>🔧</span> Дрилі</li>
+                            <li><span>🔩</span> Перфоратори</li>
+                            <li><span>🔩</span> Шуруповерти</li>
+                            <li><span>⚙️</span> Шліфмашинки кутові</li>
+                            <li><span>🪚</span> Лобзики</li>
+                            <li><span>🪚</span> Електропили</li>
+                            <li><span>✨</span> Полірувальні машинки</li>
+                            <li><span>💨</span> Компресори</li>
+                            <li><span>🌿</span> Електрокоси</li>
+                            <li><span>🧱</span> Шліфмашинки для стін</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card" onclick="toggleList(this)">
-            <div class="card-bg" style="background-image:url('foto5.png')"></div>
-            <div class="card-content">
-                <h3>🔩 Витратний інструмент</h3>
-                <p>Диски, свердла, леза, насадки</p>
-                <span class="card-toggle">▼ Детальніше</span>
-                <div class="card-list">
-                    <ul>
-                        <li><span>⭕</span> Диски відрізні</li>
-                        <li><span>🔩</span> Свердла та бури</li>
-                        <li><span>⛓️</span> Ланцюги для пил</li>
-                        <li><span>🪛</span> Насадки та біти</li>
-                        <li><span>🔪</span> Леза та полотна</li>
-                    </ul>
+            <div class="card" onclick="toggleList(this)">
+                <div class="card-bg" style="background-image:url('foto5.png')"></div>
+                <div class="card-content">
+                    <h3>🔩 Витратний інструмент</h3>
+                    <p>Диски, свердла, леза, насадки</p>
+                    <span class="card-toggle">▼ Детальніше</span>
+                    <div class="card-list">
+                        <ul>
+                            <li><span>⭕</span> Диски відрізні</li>
+                            <li><span>🔩</span> Свердла та бури</li>
+                            <li><span>⛓️</span> Ланцюги для пил</li>
+                            <li><span>🪛</span> Насадки та біти</li>
+                            <li><span>🔪</span> Леза та полотна</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- ПРОКАТ + ДОСТАВКА ПОРУЧ -->
-        <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:15px;">
-            <div class="card" onclick="toggleList(this)" style="flex:1;">
+            <div class="card" onclick="toggleList(this)">
                 <div class="card-bg" style="background-image:url('foto2.png')"></div>
                 <div class="card-content">
                     <h3>🏗️ Прокат обладнання</h3>
@@ -885,15 +881,17 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- БЛОК ДОСТАВКИ -->
-            <div class="delivery-block">
-                <img src="delivery_logo.jpg" alt="Файна Доставка Самбір">
-                <h2>🚚 Доставка</h2>
+        <!-- БЛОК ДОСТАВКИ - КОМПАКТНИЙ, ПІД АСОРТИМЕНТОМ -->
+        <div class="delivery-block">
+            <img src="delivery_logo.jpg" alt="Файна Доставка Самбір">
+            <div class="delivery-info">
+                <h2>🚚 Файна Доставка</h2>
                 <p>Доставляємо товари по Самбору та околицях!</p>
                 <div class="delivery-btns">
-                    <a href="tel:+380976461006" class="btn-delivery-call">📞 +38 097 646 1006</a>
-                    <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Файна Доставка</a>
+                    <a href="tel:+380976461006" class="btn-delivery-call">📞 097 646 1006</a>
+                    <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Facebook</a>
                 </div>
             </div>
         </div>
@@ -956,131 +954,3 @@
         <img src="foto3.jpg" alt="Магазин">
         <img src="foto1.jpg" alt="Магазин">
         <img src="foto2.jpg" alt="Магазин">
-        <img src="foto8.jpg" alt="Магазин">
-    </div>
-
-    <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
-    <div class="hot-block" id="aktsii">
-        <h2>🔥 Гарячі пропозиції</h2>
-        <p>Актуальні акції та пропозиції нашого магазину!</p>
-        <div class="posters-grid">
-            <div class="poster-item">
-                <img src="foto11.jpg" alt="Акція" onclick="openImg(this.src)">
-            </div>
-            <div class="poster-item">
-                <img src="foto12.jpg" alt="Акція" onclick="openImg(this.src)">
-            </div>
-        </div>
-        <p style="color:#aaa;">Більше пропозицій у наших соцмережах:</p>
-        <div class="social-btns">
-            <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
-            <a href="https://www.facebook.com/FineGospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
-        </div>
-    </div>
-
-    <!-- КОНТАКТИ -->
-    <div class="contacts" id="kontakty">
-        <h2>📞 Контакти</h2>
-        <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
-        <p>🕐 Графік роботи:</p>
-        <p>Пн - Пт: 8:30 - 17:00</p>
-        <p>Субота: 8:30 - 15:00</p>
-        <p>Неділя: вихідний</p>
-        <div class="btn-wrap">
-            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
-            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
-            <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
-        </div>
-    </div>
-
-    <!-- АДРЕСА -->
-    <div class="address-block">
-        <h3>📍 Наша адреса</h3>
-        <p>м. Самбір, вул. Івана Франка 89</p>
-        <p class="territory">Територія Спецбази</p>
-    </div>
-
-    <!-- КАРТА -->
-    <h2 class="section-title">🗺️ Як нас знайти</h2>
-    <div class="map-container">
-        <iframe
-            src="https://www.google.com/maps?q=вул.+Івана+Франка+89,+Самбір,+Львівська+область&output=embed"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-        </iframe>
-    </div>
-
-</div>
-
-<footer>
-    <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
-</footer>
-
-<!-- ПЛАВАЮЧІ КНОПКИ -->
-<div style="position:fixed; bottom:30px; right:30px; z-index:9998; display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
-    <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(255,140,0,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📞</a>
-    <a href="viber://chat?number=%2B380964502734" style="background:#7360f2; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(115,96,242,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">💬</a>
-    <a href="https://wa.me/380931616926" target="_blank" style="background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(37,211,102,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📱</a>
-</div>
-
-<!-- МОДАЛЬНЕ ВІКНО -->
-<div id="imgModal" onclick="closeImg()">
-    <img id="modalImg" src="" alt="Акція">
-</div>
-
-<script>
-function toggleList(card) {
-    const list = card.querySelector('.card-list');
-    const toggle = card.querySelector('.card-toggle');
-    list.classList.toggle('open');
-    toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
-}
-function openImg(src) {
-    document.getElementById('modalImg').src = src;
-    document.getElementById('imgModal').style.display = 'flex';
-}
-function closeImg() {
-    document.getElementById('imgModal').style.display = 'none';
-}
-function toggleMenu() {
-    document.getElementById('navMobile').classList.toggle('open');
-}
-const texts = [
-    "Інструмент для професіоналів",
-    "Ремонт бензотехніки",
-    "Прокат будівельного обладнання",
-    "Якісні бренди — доступні ціни",
-    "Самбір • вул. Івана Франка 89"
-];
-let textIndex = 0;
-setInterval(() => {
-    textIndex = (textIndex + 1) % texts.length;
-    const el = document.getElementById('rotatingText');
-    el.style.opacity = '0';
-    setTimeout(() => {
-        el.textContent = texts[textIndex];
-        el.style.opacity = '1';
-        el.style.transition = 'opacity 0.5s';
-    }, 300);
-}, 3000);
-function createSparks() {
-    const container = document.getElementById('sparks');
-    if (!container) return;
-    for (let i = 0; i < 15; i++) {
-        const spark = document.createElement('div');
-        spark.className = 'spark';
-        spark.style.left = Math.random() * 100 + '%';
-        spark.style.top = Math.random() * 100 + '%';
-        spark.style.animationDelay = Math.random() * 3 + 's';
-        spark.style.animationDuration = (2 + Math.random() * 2) + 's';
-        container.appendChild(spark);
-    }
-}
-createSparks();
-</script>
-
-</body>
-</html>
