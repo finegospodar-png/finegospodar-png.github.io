@@ -954,3 +954,131 @@
         <img src="foto3.jpg" alt="Магазин">
         <img src="foto1.jpg" alt="Магазин">
         <img src="foto2.jpg" alt="Магазин">
+    <img src="foto8.jpg" alt="Магазин">
+        </div>
+
+        <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
+        <div class="hot-block" id="aktsii">
+            <h2>🔥 Гарячі пропозиції</h2>
+            <p>Актуальні акції та пропозиції нашого магазину!</p>
+            <div class="posters-grid">
+                <div class="poster-item">
+                    <img src="foto11.jpg" alt="Акція" onclick="openImg(this.src)">
+                </div>
+                <div class="poster-item">
+                    <img src="foto12.jpg" alt="Акція" onclick="openImg(this.src)">
+                </div>
+            </div>
+            <p style="color:#aaa;">Більше пропозицій у наших соцмережах:</p>
+            <div class="social-btns">
+                <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
+                <a href="https://www.facebook.com/FineGospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
+            </div>
+        </div>
+
+        <!-- КОНТАКТИ -->
+        <div class="contacts" id="kontakty">
+            <h2>📞 Контакти</h2>
+            <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
+            <p>🕐 Графік роботи:</p>
+            <p>Пн - Пт: 8:30 - 17:00</p>
+            <p>Субота: 8:30 - 15:00</p>
+            <p>Неділя: вихідний</p>
+            <div class="btn-wrap">
+                <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
+                <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+                <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- АДРЕСА -->
+        <div class="address-block">
+            <h3>📍 Наша адреса</h3>
+            <p>м. Самбір, вул. Івана Франка 89</p>
+            <p class="territory">Територія Спецбази</p>
+        </div>
+
+        <!-- КАРТА -->
+        <h2 class="section-title">🗺️ Як нас знайти</h2>
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps?q=вул.+Івана+Франка+89,+Самбір,+Львівська+область&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
+    </footer>
+
+    <!-- ПЛАВАЮЧІ КНОПКИ -->
+    <div style="position:fixed; bottom:30px; right:30px; z-index:9998; display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
+        <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(255,140,0,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📞</a>
+        <a href="viber://chat?number=%2B380964502734" style="background:#7360f2; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(115,96,242,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">💬</a>
+        <a href="https://wa.me/380931616926" target="_blank" style="background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(37,211,102,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📱</a>
+    </div>
+
+    <!-- МОДАЛЬНЕ ВІКНО -->
+    <div id="imgModal" onclick="closeImg()">
+        <img id="modalImg" src="" alt="Акція">
+    </div>
+
+    <script>
+    function toggleList(card) {
+        const list = card.querySelector('.card-list');
+        const toggle = card.querySelector('.card-toggle');
+        list.classList.toggle('open');
+        toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
+    }
+    function openImg(src) {
+        document.getElementById('modalImg').src = src;
+        document.getElementById('imgModal').style.display = 'flex';
+    }
+    function closeImg() {
+        document.getElementById('imgModal').style.display = 'none';
+    }
+    function toggleMenu() {
+        document.getElementById('navMobile').classList.toggle('open');
+    }
+    const texts = [
+        "Інструмент для професіоналів",
+        "Ремонт бензотехніки",
+        "Прокат будівельного обладнання",
+        "Якісні бренди — доступні ціни",
+        "Самбір • вул. Івана Франка 89"
+    ];
+    let textIndex = 0;
+    setInterval(() => {
+        textIndex = (textIndex + 1) % texts.length;
+        const el = document.getElementById('rotatingText');
+        el.style.opacity = '0';
+        setTimeout(() => {
+            el.textContent = texts[textIndex];
+            el.style.opacity = '1';
+            el.style.transition = 'opacity 0.5s';
+        }, 300);
+    }, 3000);
+    function createSparks() {
+        const container = document.getElementById('sparks');
+        if (!container) return;
+        for (let i = 0; i < 15; i++) {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            spark.style.left = Math.random() * 100 + '%';
+            spark.style.top = Math.random() * 100 + '%';
+            spark.style.animationDelay = Math.random() * 3 + 's';
+            spark.style.animationDuration = (2 + Math.random() * 2) + 's';
+            container.appendChild(spark);
+        }
+    }
+    createSparks();
+    </script>
+
+    </body>
+    </html>    
