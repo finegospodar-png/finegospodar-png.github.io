@@ -1,4 +1,4 @@
-А<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -7,11 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #1a1a1a;
-            color: #fff;
-        }
+        body { font-family: 'Montserrat', sans-serif; background: #1a1a1a; color: #fff; }
 
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
@@ -31,495 +27,106 @@
         }
 
         nav {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%;
+            position: fixed; top: 0; left: 0; width: 100%;
             background: rgba(20,20,20,0.97);
             border-bottom: 2px solid #ff8c00;
-            z-index: 9000;
-            padding: 0 20px;
+            z-index: 9000; padding: 0 20px;
         }
         .nav-inner {
-            max-width: 960px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 55px;
+            max-width: 960px; margin: 0 auto;
+            display: flex; align-items: center;
+            justify-content: space-between; height: 55px;
         }
-        .nav-logo {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 1.3em;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 5px;
-            list-style: none;
-        }
-        .nav-links a {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 0.8em;
-            font-weight: 600;
-            letter-spacing: 1px;
-            padding: 6px 10px;
-            border-radius: 4px;
-            transition: all 0.2s;
-            text-transform: uppercase;
-        }
-        .nav-links a:hover {
-            color: #ff8c00;
-            background: rgba(255,140,0,0.1);
-        }
-        .nav-burger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5em;
-            color: #ff8c00;
-        }
-        .nav-mobile {
-            display: none;
-            flex-direction: column;
-            background: rgba(20,20,20,0.98);
-            padding: 10px 20px 15px;
-            border-top: 1px solid #333;
-        }
-        .nav-mobile a {
-            color: #ddd;
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 600;
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .nav-logo { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; font-size: 1.3em; letter-spacing: 2px; text-decoration: none; }
+        .nav-links { display: flex; gap: 5px; list-style: none; }
+        .nav-links a { color: #ddd; text-decoration: none; font-size: 0.8em; font-weight: 600; letter-spacing: 1px; padding: 6px 10px; border-radius: 4px; transition: all 0.2s; text-transform: uppercase; }
+        .nav-links a:hover { color: #ff8c00; background: rgba(255,140,0,0.1); }
+        .nav-burger { display: none; cursor: pointer; font-size: 1.5em; color: #ff8c00; }
+        .nav-mobile { display: none; flex-direction: column; background: rgba(20,20,20,0.98); padding: 10px 20px 15px; border-top: 1px solid #333; }
+        .nav-mobile a { color: #ddd; text-decoration: none; font-size: 0.9em; font-weight: 600; padding: 10px 0; border-bottom: 1px solid #333; text-transform: uppercase; letter-spacing: 1px; }
         .nav-mobile a:hover { color: #ff8c00; }
         .nav-mobile.open { display: flex; }
 
         header {
-            position: relative;
-            padding: 80px 20px 60px;
-            text-align: center;
-            overflow: hidden;
-            min-height: 420px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            position: relative; padding: 80px 20px 60px; text-align: center;
+            overflow: hidden; min-height: 420px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
             margin-top: 55px;
         }
         .header-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('logo.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(8px) brightness(0.25);
-            transform: scale(1.1);
-            z-index: 0;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('logo.jpg'); background-size: cover; background-position: center;
+            filter: blur(8px) brightness(0.25); transform: scale(1.1); z-index: 0;
         }
-        .sparks {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .spark {
-            position: absolute;
-            width: 4px; height: 4px;
-            background: #ff8c00;
-            border-radius: 50%;
-            animation: spark 3s infinite;
-            opacity: 0;
-        }
+        .sparks { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden; }
+        .spark { position: absolute; width: 4px; height: 4px; background: #ff8c00; border-radius: 50%; animation: spark 3s infinite; opacity: 0; }
         .header-content { position: relative; z-index: 1; }
-        .header-logo {
-            height: 150px;
-            display: block;
-            margin: 0 auto 15px;
-            filter: drop-shadow(0 0 20px rgba(255,140,0,0.8));
-            animation: fadeInDown 1s ease both;
-        }
-        .header-title-line1 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            font-size: 1.2em;
-            color: #aaa;
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            animation: fadeInDown 1s ease forwards;
-            margin-bottom: 5px;
-        }
-        .header-title-line2 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 7em;
-            color: #ff8c00;
-            letter-spacing: 6px;
-            line-height: 1;
-            text-shadow: 0 0 30px rgba(255,140,0,0.5), 3px 3px 20px rgba(0,0,0,0.8);
-            animation: fadeInDown 1s ease 0.3s both;
-        }
-        .header-title-line3 {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 4em;
-            color: #fff;
-            letter-spacing: 10px;
-            line-height: 1;
-            text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
-            animation: fadeInDown 1s ease 0.6s both;
-            margin-bottom: 10px;
-        }
-        .header-divider {
-            width: 120px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ff8c00, transparent);
-            margin: 12px auto;
-            animation: fadeInUp 1s ease 0.9s both;
-        }
-        .header-rotating-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1em;
-            color: #ff8c00;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: 600;
-            min-height: 25px;
-            animation: fadeInUp 1s ease 1.2s both;
-            margin-bottom: 20px;
-            transition: opacity 0.5s;
-        }
-        .header-badges {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 25px;
-            animation: fadeInUp 1s ease 1.5s both;
-        }
-        .header-badge-item {
-            background: rgba(255,140,0,0.15);
-            border: 1px solid rgba(255,140,0,0.4);
-            color: #ddd;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            letter-spacing: 1px;
-        }
-        .header-btns {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease 1.8s both;
-        }
-        .header-btn-primary {
-            background: #ff8c00;
-            color: #1a1a1a;
-            padding: 14px 35px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1em;
-            text-decoration: none;
-            letter-spacing: 1px;
-            animation: pulse 2s infinite;
-            transition: transform 0.2s;
-        }
+        .header-logo { height: 150px; display: block; margin: 0 auto 15px; filter: drop-shadow(0 0 20px rgba(255,140,0,0.8)); animation: fadeInDown 1s ease both; }
+        .header-title-line1 { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.2em; color: #aaa; letter-spacing: 12px; text-transform: uppercase; animation: fadeInDown 1s ease forwards; margin-bottom: 5px; }
+        .header-title-line2 { font-family: 'Bebas Neue', sans-serif; font-size: 7em; color: #ff8c00; letter-spacing: 6px; line-height: 1; text-shadow: 0 0 30px rgba(255,140,0,0.5), 3px 3px 20px rgba(0,0,0,0.8); animation: fadeInDown 1s ease 0.3s both; }
+        .header-title-line3 { font-family: 'Bebas Neue', sans-serif; font-size: 4em; color: #fff; letter-spacing: 10px; line-height: 1; text-shadow: 3px 3px 20px rgba(0,0,0,0.8); animation: fadeInDown 1s ease 0.6s both; margin-bottom: 10px; }
+        .header-divider { width: 120px; height: 3px; background: linear-gradient(90deg, transparent, #ff8c00, transparent); margin: 12px auto; animation: fadeInUp 1s ease 0.9s both; }
+        .header-rotating-text { font-family: 'Montserrat', sans-serif; font-size: 1em; color: #ff8c00; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; min-height: 25px; animation: fadeInUp 1s ease 1.2s both; margin-bottom: 20px; transition: opacity 0.5s; }
+        .header-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px; animation: fadeInUp 1s ease 1.5s both; }
+        .header-badge-item { background: rgba(255,140,0,0.15); border: 1px solid rgba(255,140,0,0.4); color: #ddd; padding: 6px 16px; border-radius: 20px; font-size: 0.8em; letter-spacing: 1px; }
+        .header-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; animation: fadeInUp 1s ease 1.8s both; }
+        .header-btn-primary { background: #ff8c00; color: #1a1a1a; padding: 14px 35px; border-radius: 30px; font-weight: 700; font-size: 1em; text-decoration: none; letter-spacing: 1px; animation: pulse 2s infinite; transition: transform 0.2s; }
         .header-btn-primary:hover { transform: scale(1.05); }
-        .header-btn-secondary {
-            background: transparent;
-            color: #ff8c00;
-            border: 2px solid #ff8c00;
-            padding: 14px 35px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1em;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: all 0.2s;
-        }
+        .header-btn-secondary { background: transparent; color: #ff8c00; border: 2px solid #ff8c00; padding: 14px 35px; border-radius: 30px; font-weight: 700; font-size: 1em; text-decoration: none; letter-spacing: 1px; transition: all 0.2s; }
         .header-btn-secondary:hover { background: #ff8c00; color: #1a1a1a; }
 
-        .container {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .section-title {
-            font-family: 'Bebas Neue', sans-serif;
-            text-align: center;
-            color: #ff8c00;
-            font-size: 2em;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
+        .container { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+        .section-title { font-family: 'Bebas Neue', sans-serif; text-align: center; color: #ff8c00; font-size: 2em; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 3px; border-bottom: 2px solid #333; padding-bottom: 10px; }
 
-        /* ЧОМУ ОБИРАЮТЬ НАС */
         .why-us { margin-bottom: 50px; }
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .why-item {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-top: 3px solid #ff8c00;
-            border-radius: 10px;
-            padding: 25px 20px;
-            text-align: center;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .why-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255,140,0,0.2);
-        }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .why-item { background: #2d2d2d; border: 1px solid #444; border-top: 3px solid #ff8c00; border-radius: 10px; padding: 25px 20px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+        .why-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255,140,0,0.2); }
         .why-icon { font-size: 2.5em; display: block; margin-bottom: 12px; }
-        .why-item h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 1.2em;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
+        .why-item h3 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; font-size: 1.2em; letter-spacing: 1px; margin-bottom: 8px; }
         .why-item p { color: #aaa; font-size: 0.85em; line-height: 1.6; }
 
-        .assortment-delivery {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-
-        .cards {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .card {
-            position: relative;
-            border-radius: 10px;
-            padding: 20px 15px;
-            flex: 1;
-            min-width: 180px;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-            min-height: 200px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            cursor: pointer;
-        }
-        .card-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: blur(3px) brightness(0.35);
-            transform: scale(1.05);
-            z-index: 0;
-        }
+        .cards { display: flex; gap: 15px; flex-wrap: wrap; }
+        .card { position: relative; border-radius: 10px; padding: 20px 15px; flex: 1; min-width: 180px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; min-height: 200px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; cursor: pointer; }
+        .card-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: blur(3px) brightness(0.35); transform: scale(1.05); z-index: 0; }
         .card-content { position: relative; z-index: 1; width: 100%; }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(255,140,0,0.4);
-        }
-        .card h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            margin-bottom: 8px;
-            font-size: 1.2em;
-            letter-spacing: 1px;
-            line-height: 1.3;
-            text-align: center;
-        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255,140,0,0.4); }
+        .card h3 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; margin-bottom: 8px; font-size: 1.2em; letter-spacing: 1px; line-height: 1.3; text-align: center; }
         .card p { color: #ddd; font-size: 0.85em; line-height: 1.5; }
-        .card-list {
-            display: none;
-            margin-top: 15px;
-            text-align: left;
-            width: 100%;
-            border-top: 1px solid #ff8c00;
-            padding-top: 12px;
-        }
+        .card-list { display: none; margin-top: 15px; text-align: left; width: 100%; border-top: 1px solid #ff8c00; padding-top: 12px; }
         .card-list.open { display: block; }
         .card-list ul { list-style: none; padding: 0; }
-        .card-list ul li {
-            padding: 6px 0;
-            color: #fff;
-            font-size: 0.9em;
-            border-bottom: 1px solid #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .card-list ul li { padding: 6px 0; color: #fff; font-size: 0.9em; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 8px; }
         .card-list ul li:last-child { border-bottom: none; }
         .card-list ul li span { color: #ff8c00; font-size: 1.1em; }
-        .card-toggle {
-            display: inline-block;
-            margin-top: 10px;
-            color: #ff8c00;
-            font-size: 0.85em;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+        .card-toggle { display: inline-block; margin-top: 10px; color: #ff8c00; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; }
 
-        /* ДОСТАВКА - КОМПАКТНИЙ БЛОК */
-        .delivery-block {
-            background: linear-gradient(135deg, #1a2d1a, #1a1a1a);
-            border: 2px solid #25d366;
-            border-radius: 12px;
-            padding: 15px;
-            margin-top: 15px;
-            box-shadow: 0 0 15px rgba(37,211,102,0.15);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .delivery-block img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
+        .delivery-block { background: linear-gradient(135deg, #1a2d1a, #1a1a1a); border: 2px solid #25d366; border-radius: 12px; padding: 15px; margin-top: 15px; box-shadow: 0 0 15px rgba(37,211,102,0.15); display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+        .delivery-block img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
         .delivery-info { flex: 1; min-width: 150px; }
-        .delivery-info h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #25d366;
-            font-size: 1.3em;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-        .delivery-info p {
-            color: #ccc;
-            font-size: 0.8em;
-            line-height: 1.4;
-            margin-bottom: 8px;
-        }
-        .delivery-btns {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .btn-delivery-call {
-            background: #25d366;
-            color: #1a1a1a;
-            padding: 6px 14px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.8em;
-            transition: background 0.2s;
-        }
+        .delivery-info h2 { font-family: 'Bebas Neue', sans-serif; color: #25d366; font-size: 1.3em; letter-spacing: 1px; margin-bottom: 4px; }
+        .delivery-info p { color: #ccc; font-size: 0.8em; line-height: 1.4; margin-bottom: 8px; }
+        .delivery-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn-delivery-call { background: #25d366; color: #1a1a1a; padding: 6px 14px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.8em; transition: background 0.2s; }
         .btn-delivery-call:hover { background: #1da851; }
-        .btn-delivery-fb {
-            background: #1877f2;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.8em;
-            transition: background 0.2s;
-        }
+        .btn-delivery-fb { background: #1877f2; color: white; padding: 6px 14px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.8em; transition: background 0.2s; }
         .btn-delivery-fb:hover { background: #0d5ab8; }
 
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 50px;
-        }
-        .tool-card {
-            background: #2d2d2d;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #444;
-            transition: transform 0.2s;
-        }
-        .tool-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255,140,0,0.2);
-        }
+        .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 50px; }
+        .tool-card { background: #2d2d2d; border-radius: 8px; overflow: hidden; border: 1px solid #444; transition: transform 0.2s; }
+        .tool-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,140,0,0.2); }
         .tool-card img { width: 100%; height: 160px; object-fit: cover; }
-        .tool-card p {
-            padding: 10px;
-            text-align: center;
-            color: #ff8c00;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1em;
-            letter-spacing: 1px;
-        }
-        .repair-block {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #2d1a00, #1a1100);
-            border: 2px solid #ff8c00;
-            border-radius: 12px;
-            padding: 40px 30px;
-            margin-bottom: 50px;
-            text-align: center;
-            box-shadow: 0 0 30px rgba(255,140,0,0.2);
-        }
-        .repair-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-image: url('foto17.png');
-            background-size: cover;
-            background-position: center;
-            filter: blur(4px) brightness(0.2);
-            transform: scale(1.05);
-            z-index: 0;
-        }
+        .tool-card p { padding: 10px 10px 4px; text-align: center; color: #ff8c00; font-family: 'Bebas Neue', sans-serif; font-size: 1em; letter-spacing: 1px; }
+
+        .repair-block { position: relative; overflow: hidden; background: linear-gradient(135deg, #2d1a00, #1a1100); border: 2px solid #ff8c00; border-radius: 12px; padding: 40px 30px; margin-bottom: 50px; text-align: center; box-shadow: 0 0 30px rgba(255,140,0,0.2); }
+        .repair-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('foto17.png'); background-size: cover; background-position: center; filter: blur(4px) brightness(0.2); transform: scale(1.05); z-index: 0; }
         .repair-content { position: relative; z-index: 1; }
         .repair-content .repair-icon { font-size: 4em; display: block; margin-bottom: 15px; }
-        .repair-content h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 2.5em;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-        .repair-content p {
-            color: #fff;
-            line-height: 1.8;
-            font-size: 1.1em;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .brands-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-        .brand-item {
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.95em;
-            letter-spacing: 2px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
+        .repair-content h2 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; font-size: 2.5em; letter-spacing: 3px; margin-bottom: 15px; }
+        .repair-content p { color: #fff; line-height: 1.8; font-size: 1.1em; max-width: 700px; margin: 0 auto; }
+
+        .brands-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 50px; }
+        .brand-item { padding: 10px 22px; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.95em; letter-spacing: 2px; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; display: inline-block; }
         .brand-item:hover { transform: scale(1.08); box-shadow: 0 4px 15px rgba(0,0,0,0.4); }
         .brand-yato     { background: #cc0000; color: #fff; border: 2px solid #ff0000; }
         .brand-vitals   { background: #003399; color: #fff; border: 2px solid #0044cc; }
@@ -533,187 +140,62 @@
         .brand-haisser  { background: #003399; color: #ffcc00; border: 2px solid #ffcc00; }
         .brand-oleomac  { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
         .brand-sturm    { background: #cc0000; color: #fff; border: 2px solid #ff0000; }
-.brand-sigma    { background: #1a1a6e; color: #fff; border: 2px solid #2222aa; }
-.brand-worcraft { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
-.brand-machtz   { background: #222222; color: #fff; border: 2px solid #ff8c00; }
-.brand-ingco    { background: #cc0000; color: #ffcc00; border: 2px solid #ffcc00; }
-.brand-kentavr  { background: #006633; color: #fff; border: 2px solid #00aa44; }
-        .photos-grid {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-        .photos-grid img {
-            flex: 1;
-            min-width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 2px solid #444;
-            transition: transform 0.2s;
-        }
+        .brand-sigma    { background: #1a1a6e; color: #fff; border: 2px solid #2222aa; }
+        .brand-worcraft { background: #ff6600; color: #fff; border: 2px solid #ff8c00; }
+        .brand-machtz   { background: #222222; color: #fff; border: 2px solid #ff8c00; }
+        .brand-ingco    { background: #cc0000; color: #ffcc00; border: 2px solid #ffcc00; }
+        .brand-kentavr  { background: #006633; color: #fff; border: 2px solid #00aa44; }
+
+        .photos-grid { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 50px; }
+        .photos-grid img { flex: 1; min-width: 200px; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #444; transition: transform 0.2s; }
         .photos-grid img:hover { transform: scale(1.02); border-color: #ff8c00; }
-        .hot-block {
-            background: linear-gradient(135deg, #2d1a00, #1a1a1a);
-            border: 2px solid #ff8c00;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 50px;
-            text-align: center;
-            box-shadow: 0 0 25px rgba(255,140,0,0.2);
-        }
-        .hot-block h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 2.5em;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
+
+        .hot-block { background: linear-gradient(135deg, #2d1a00, #1a1a1a); border: 2px solid #ff8c00; border-radius: 12px; padding: 30px; margin-bottom: 50px; text-align: center; box-shadow: 0 0 25px rgba(255,140,0,0.2); }
+        .hot-block h2 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; font-size: 2.5em; letter-spacing: 3px; margin-bottom: 10px; }
         .hot-block p { color: #ccc; margin-bottom: 20px; font-size: 0.95em; }
-        .posters-grid {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 25px 0;
-        }
-        .poster-item {
-            flex: 1;
-            min-width: 250px;
-            max-width: 400px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid #ff8c00;
-            box-shadow: 0 0 20px rgba(255,140,0,0.3);
-            transition: transform 0.2s;
-        }
+        .posters-grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 25px 0; }
+        .poster-item { flex: 1; min-width: 250px; max-width: 400px; border-radius: 12px; overflow: hidden; border: 2px solid #ff8c00; box-shadow: 0 0 20px rgba(255,140,0,0.3); transition: transform 0.2s; }
         .poster-item:hover { transform: scale(1.02); }
         .poster-item img { width: 100%; display: block; cursor: pointer; }
-        .social-btns {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .btn-tiktok {
-            background: #000; color: #fff;
-            border: 2px solid #ff0050;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: all 0.2s;
-        }
+        .social-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .btn-tiktok { background: #000; color: #fff; border: 2px solid #ff0050; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1em; transition: all 0.2s; }
         .btn-tiktok:hover { background: #ff0050; }
-        .btn-facebook {
-            background: #1877f2; color: #fff;
-            border: 2px solid #1877f2;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: all 0.2s;
-        }
+        .btn-facebook { background: #1877f2; color: #fff; border: 2px solid #1877f2; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1em; transition: all 0.2s; }
         .btn-facebook:hover { background: #0d5ab8; }
-        .contacts {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-left: 4px solid #ff8c00;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
-        .contacts h2 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            margin-bottom: 20px;
-            font-size: 2em;
-            letter-spacing: 2px;
-        }
+
+        .contacts { background: #2d2d2d; border: 1px solid #444; border-left: 4px solid #ff8c00; border-radius: 8px; padding: 30px; margin-bottom: 30px; }
+        .contacts h2 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; margin-bottom: 20px; font-size: 2em; letter-spacing: 2px; }
         .contacts p { font-size: 1.1em; color: #ddd; margin: 12px 0; }
         .contacts a { color: #ff8c00; text-decoration: none; font-weight: bold; }
         .btn-wrap { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .btn-call {
-            background: #ff8c00; color: #1a1a1a;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: background 0.2s;
-        }
+        .btn-call { background: #ff8c00; color: #1a1a1a; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1em; transition: background 0.2s; }
         .btn-call:hover { background: #ffa500; }
-        .btn-viber {
-            background: #7360f2; color: white;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: background 0.2s;
-        }
+        .btn-viber { background: #7360f2; color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1em; transition: background 0.2s; }
         .btn-viber:hover { background: #5a4bd1; }
-        .btn-whatsapp {
-            background: #25d366; color: white;
-            padding: 14px 30px; border-radius: 25px;
-            text-decoration: none; font-weight: 700;
-            font-size: 1em; transition: background 0.2s;
-        }
+        .btn-whatsapp { background: #25d366; color: white; padding: 14px 30px; border-radius: 25px; text-decoration: none; font-weight: 700; font-size: 1em; transition: background 0.2s; }
         .btn-whatsapp:hover { background: #1da851; }
-        .address-block {
-            background: #2d2d2d;
-            border: 1px solid #444;
-            border-left: 4px solid #ff8c00;
-            border-radius: 8px;
-            padding: 25px 30px;
-            margin-bottom: 30px;
-        }
-        .address-block h3 {
-            font-family: 'Bebas Neue', sans-serif;
-            color: #ff8c00;
-            font-size: 1.5em;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
+
+        .address-block { background: #2d2d2d; border: 1px solid #444; border-left: 4px solid #ff8c00; border-radius: 8px; padding: 25px 30px; margin-bottom: 30px; }
+        .address-block h3 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; font-size: 1.5em; letter-spacing: 2px; margin-bottom: 8px; }
         .address-block p { color: #ddd; font-size: 1.05em; margin: 5px 0; }
-        .address-block .territory {
-            color: #aaa;
-            font-size: 0.9em;
-            margin-top: 8px;
-            font-style: italic;
-        }
-        .map-container {
-            border-radius: 8px;
-            overflow: hidden;
-            border: 2px solid #ff8c00;
-            margin-bottom: 50px;
-        }
-        footer {
-            background: #111;
-            border-top: 3px solid #ff8c00;
-            color: #888;
-            text-align: center;
-            padding: 20px;
-        }
+        .address-block .territory { color: #aaa; font-size: 0.9em; margin-top: 8px; font-style: italic; }
+
+        .map-container { border-radius: 8px; overflow: hidden; border: 2px solid #ff8c00; margin-bottom: 50px; position: relative; }
+
+        footer { background: #111; border-top: 3px solid #ff8c00; color: #888; text-align: center; padding: 20px; }
         footer span { color: #ff8c00; }
-        #imgModal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.92);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        #imgModal img {
-            max-width: 90%;
-            max-height: 90vh;
-            border-radius: 8px;
-            border: 2px solid #ff8c00;
-        }
+
+        #imgModal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 9999; align-items: center; justify-content: center; cursor: pointer; }
+        #imgModal img { max-width: 90%; max-height: 90vh; border-radius: 8px; border: 2px solid #ff8c00; }
 
         @media (max-width: 768px) {
             .header-title-line2 { font-size: 4em; }
             .header-title-line3 { font-size: 2.5em; }
-            .repair-content h2 { font-size: 1.6em; }
             .tools-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-links { display: none; }
             .nav-burger { display: block; }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .repair-content h2 { font-size: 1.6em; }
         }
         @media (max-width: 480px) {
             .why-grid { grid-template-columns: 1fr; }
@@ -723,7 +205,6 @@
 </head>
 <body>
 
-<!-- НАВІГАЦІЙНЕ МЕНЮ -->
 <nav>
     <div class="nav-inner">
         <a href="#top" class="nav-logo">🔧 ФАЙНИЙ ГОСПОДАР</a>
@@ -747,7 +228,6 @@
     </div>
 </nav>
 
-<!-- ШАПКА -->
 <header id="top">
     <div class="header-bg"></div>
     <div class="sparks" id="sparks"></div>
@@ -772,7 +252,6 @@
 
 <div class="container">
 
-    <!-- ЧОМУ ОБИРАЮТЬ НАС -->
     <div class="why-us" id="chomu">
         <h2 class="section-title">⭐ Чому обирають нас</h2>
         <div class="why-grid">
@@ -809,163 +288,147 @@
         </div>
     </div>
 
-    <!-- АСОРТИМЕНТ -->
     <h2 class="section-title" id="asortyment">🔧 Наш асортимент</h2>
-    <div class="assortment-delivery">
-        <div class="cards">
-            <div class="card" onclick="toggleList(this)">
-                <div class="card-bg" style="background-image:url('foto7.png')"></div>
-                <div class="card-content">
-                    <h3>⛽ Бензоінструмент</h3>
-                    <p>Бензопили, мотокоси, культиватори, генератори</p>
-                    <span class="card-toggle">▼ Детальніше</span>
-                    <div class="card-list">
-                        <ul>
-                            <li><span>🪚</span> Бензопили</li>
-                            <li><span>🌿</span> Мотокоси</li>
-                            <li><span>⚡</span> Генератори</li>
-                            <li><span>🚜</span> Культиватори</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="toggleList(this)">
-                <div class="card-bg" style="background-image:url('foto4.png')"></div>
-                <div class="card-content">
-                    <h3>⚡ Електроінструмент</h3>
-                    <p>Дрилі, шуруповерти, шліфмашинки, лобзики</p>
-                    <span class="card-toggle">▼ Детальніше</span>
-                    <div class="card-list">
-                        <ul>
-                            <li><span>🔧</span> Дрилі</li>
-                            <li><span>🔩</span> Перфоратори</li>
-                            <li><span>🔩</span> Шуруповерти</li>
-                            <li><span>⚙️</span> Шліфмашинки кутові</li>
-                            <li><span>🪚</span> Лобзики</li>
-                            <li><span>🪚</span> Електропили</li>
-                            <li><span>✨</span> Полірувальні машинки</li>
-                            <li><span>💨</span> Компресори</li>
-                            <li><span>🌿</span> Електрокоси</li>
-                            <li><span>🧱</span> Шліфмашинки для стін</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="toggleList(this)">
-                <div class="card-bg" style="background-image:url('foto5.png')"></div>
-                <div class="card-content">
-                    <h3>🔩 Витратний інструмент</h3>
-                    <p>Диски, свердла, леза, насадки</p>
-                    <span class="card-toggle">▼ Детальніше</span>
-                    <div class="card-list">
-                        <ul>
-                            <li><span>⭕</span> Диски відрізні</li>
-                            <li><span>🔩</span> Свердла та бури</li>
-                            <li><span>⛓️</span> Ланцюги для пил</li>
-                            <li><span>🪛</span> Насадки та біти</li>
-                            <li><span>🔪</span> Леза та полотна</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="card" onclick="toggleList(this)">
-                <div class="card-bg" style="background-image:url('foto2.png')"></div>
-                <div class="card-content">
-                    <h3>🏗️ Прокат обладнання</h3>
-                    <p>Будівельне обладнання в оренду</p>
-                    <span class="card-toggle">▼ Детальніше</span>
-                    <div class="card-list">
-                        <ul>
-                            <li><span>🔄</span> Бетонозмішувачі 160л</li>
-                            <li><span>🔄</span> Бетонозмішувачі 250л</li>
-                            <li><span>🧱</span> Шліфмашинки для стін</li>
-                            <li><span>📳</span> Вібратор для бетону</li>
-                            <li><span>🔨</span> Відбійні молотки</li>
-                            <li><span>⚒️</span> Перфоратори SDS max</li>
-                            <li><span>🏗️</span> Віброплити</li>
-                            <li><span>📳</span> Вібронога</li>
-                        </ul>
-                    </div>
+    <div class="cards" style="margin-bottom:15px;">
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto7.png')"></div>
+            <div class="card-content">
+                <h3>⛽ Бензоінструмент</h3>
+                <p>Бензопили, мотокоси, культиватори, генератори</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🪚</span> Бензопили</li>
+                        <li><span>🌿</span> Мотокоси</li>
+                        <li><span>⚡</span> Генератори</li>
+                        <li><span>🚜</span> Культиватори</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <!-- БЛОК ДОСТАВКИ - КОМПАКТНИЙ, ПІД АСОРТИМЕНТОМ -->
-        <div class="delivery-block">
-            <img src="delivery_logo.jpg" alt="Файна Доставка Самбір">
-            <div class="delivery-info">
-                <h2>🚚 Файна Доставка</h2>
-                <p>Доставляємо товари по Самбору та околицях!</p>
-                <div class="delivery-btns">
-                    <a href="tel:+380976461006" class="btn-delivery-call">📞 097 646 1006</a>
-                    <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Facebook</a>
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto4.png')"></div>
+            <div class="card-content">
+                <h3>⚡ Електроінструмент</h3>
+                <p>Дрилі, шуруповерти, шліфмашинки, лобзики</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🔧</span> Дрилі</li>
+                        <li><span>🔩</span> Перфоратори</li>
+                        <li><span>🔩</span> Шуруповерти</li>
+                        <li><span>⚙️</span> Шліфмашинки кутові</li>
+                        <li><span>🪚</span> Лобзики</li>
+                        <li><span>🪚</span> Електропили</li>
+                        <li><span>✨</span> Полірувальні машинки</li>
+                        <li><span>💨</span> Компресори</li>
+                        <li><span>🌿</span> Електрокоси</li>
+                        <li><span>🧱</span> Шліфмашинки для стін</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto5.png')"></div>
+            <div class="card-content">
+                <h3>🔩 Витратний інструмент</h3>
+                <p>Диски, свердла, леза, насадки</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>⭕</span> Диски відрізні</li>
+                        <li><span>🔩</span> Свердла та бури</li>
+                        <li><span>⛓️</span> Ланцюги для пил</li>
+                        <li><span>🪛</span> Насадки та біти</li>
+                        <li><span>🔪</span> Леза та полотна</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card" onclick="toggleList(this)">
+            <div class="card-bg" style="background-image:url('foto2.png')"></div>
+            <div class="card-content">
+                <h3>🏗️ Прокат обладнання</h3>
+                <p>Будівельне обладнання в оренду</p>
+                <span class="card-toggle">▼ Детальніше</span>
+                <div class="card-list">
+                    <ul>
+                        <li><span>🔄</span> Бетонозмішувачі 160л</li>
+                        <li><span>🔄</span> Бетонозмішувачі 250л</li>
+                        <li><span>🧱</span> Шліфмашинки для стін</li>
+                        <li><span>📳</span> Вібратор для бетону</li>
+                        <li><span>🔨</span> Відбійні молотки</li>
+                        <li><span>⚒️</span> Перфоратори SDS max</li>
+                        <li><span>🏗️</span> Віброплити</li>
+                        <li><span>📳</span> Вібронога</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ФОТО ІНСТРУМЕНТІВ -->
-    <h2 class="section-title">⚙️ Наш інструмент</h2>
+    <div class="delivery-block">
+        <img src="delivery_logo.jpg" alt="Файна Доставка Самбір">
+        <div class="delivery-info">
+            <h2>🚚 Файна Доставка</h2>
+            <p>Доставляємо товари по Самбору та околицях!</p>
+            <div class="delivery-btns">
+                <a href="tel:+380976461006" class="btn-delivery-call">📞 097 646 1006</a>
+                <a href="https://www.facebook.com/profile.php?id=100075372476110" target="_blank" class="btn-delivery-fb">📘 Facebook</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top:50px;">⚙️ Наш інструмент</h2>
     <div class="tools-grid">
         <div class="tool-card">
-            <img src="foto7.png" alt="Бензоінструмент">
-            <p>Бензоінструмент</p>
+            <img src="foto7.png" alt="Бензопили">
+            <p>🪚 Бензопили</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OLEO-MAC • GARTNER • ЗЕНІТ</span>
+        </div>
+        <div class="tool-card">
+            <img src="foto6.jpg" alt="Мотокоси та тримери">
+            <p>🌿 Мотокоси та тримери</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">GARTNER • ЗЕНІТ • OLEO-MAC</span>
         </div>
         <div class="tool-card">
             <img src="foto4.png" alt="Електроінструмент">
-            <p>Електроінструмент</p>
+            <p>⚡ Електроінструмент</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">YATO • TEKHMAN • STURM</span>
         </div>
         <div class="tool-card">
-            <img src="foto5.png" alt="Витратний інструмент">
-            <p>Витратний інструмент</p>
+            <img src="foto5.png" alt="Витратні матеріали">
+            <p>🔩 Витратні матеріали</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OREGON • WINZOR • STIHL</span>
         </div>
         <div class="tool-card">
-            <img src="foto6.jpg" alt="Мотокоси">
-            <p>Мотокоси</p>
+            <img src="foto3.png" alt="Компресори та генератори">
+            <p>💨 Компресори та генератори</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">WERK • FORTE • VITALS</span>
         </div>
         <div class="tool-card">
-            <img src="foto3.png" alt="Шуруповерти">
-            <p>Шуруповерти</p>
+            <img src="foto17.png" alt="Мийки високого тиску">
+            <p>💧 Мийки високого тиску</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OLEO-MAC • GARTNER • TEKHMAN</span>
         </div>
     </div>
-<!-- РЕМОНТ -->
-<div class="repair-block" id="remont">
-    <div class="repair-bg"></div>
-    <div class="repair-content">
-        <span class="repair-icon">🔩</span>
-        <h2>Ремонт та продаж запчастин</h2>
-        <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
-        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
-            <img src="foto25.jpg" alt="Ремонт" style="height:180px; border-radius:10px; border:2px solid #ff8c00; object-fit:cover;">
-            <img src="foto18.jpg" alt="Запчастини" style="height:180px; border-radius:10px; border:2px solid #ff8c00; object-fit:cover;">
-        </div>
-        <p style="margin-top:10px; font-size:1.1em;">📞 Майстер: <a href="tel:+380677402860" style="color:#ff8c00; font-weight:700;">+38 067 740 2860</a></p>
-    </div>
-</div>
 
-  <!-- БРЕНДИ -->
-<h2 class="section-title" id="brendy">🏆 Наші бренди</h2>
-<div class="brands-grid">
-    <a href="https://sturmax.com.ua" target="_blank" class="brand-item brand-sturmax">STURMAX</a>
-    <a href="https://yato24.com.ua/ua/" target="_blank" class="brand-item brand-yato">YATO</a>
-    <a href="https://vitals.ua" target="_blank" class="brand-item brand-vitals">VITALS</a>
-    <a href="https://budpostach.ua" target="_blank" class="brand-item brand-forte">FORTE</a>
-    <a href="https://tekmanshop.com.ua" target="_blank" class="brand-item brand-tekhman">TEKHMAN</a>
-    <a href="https://zenit-profi.com/ua/" target="_blank" class="brand-item brand-zenit">ЗЕНІТ</a>
-    <a href="https://budpostach.ua" target="_blank" class="brand-item brand-grunhelm">GRUNHELM</a>
-    <a href="https://gartner.ua" target="_blank" class="brand-item brand-gartner">GARTNER</a>
-    <a href="https://budpostach.ua" target="_blank" class="brand-item brand-werk">WERK</a>
-    <a href="https://haisser.com.ua" target="_blank" class="brand-item brand-haisser">HAISSER</a>
-    <a href="https://epi.com.ua/" target="_blank" class="brand-item brand-oleomac">OLEO-MAC</a>
-    <a href="https://sturm.ua" target="_blank" class="brand-item brand-sturm">STURM</a>
-    <a href="https://sigma.ua" target="_blank" class="brand-item brand-sigma">SIGMA</a>
-    <a href="https://worcraft.com.ua/ua" target="_blank" class="brand-item brand-worcraft">WORCRAFT</a>
-    <a href="https://machtz.com.ua/ua" target="_blank" class="brand-item brand-machtz">MACHTZ</a>
-    <a href="https://ingco.ua" target="_blank" class="brand-item brand-ingco">INGCO</a>
-    <a href="https://kentavr.ua" target="_blank" class="brand-item brand-kentavr">КЕНТАВР</a>
-</div>
-</div>
-    
+    <div class="repair-block" id="remont">
+        <div class="repair-bg"></div>
+        <div class="repair-content">
+            <span class="repair-icon">🔩</span>
+            <h2>Ремонт та продаж запчастин</h2>
+            <p>Професійний ремонт та технічне обслуговування бензопил, мотокос, генераторів, газонокосарок та іншої техніки. Досвідчені майстри. Якісні запчастини. Гарантія на роботи.</p>
+            <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
+                <img src="foto25.jpg" alt="Ремонт" style="height:180px; border-radius:10px; border:2px solid #ff8c00; object-fit:cover;">
+                <img src="foto18.jpg" alt="Запчастини" style="height:180px; border-radius:10px; border:2px solid #ff8c00; object-fit:cover;">
+            </div>
+            <p style="margin-top:10px; font-size:1.1em;">📞 Майстер: <a href="tel:+380677402860" style="color:#ff8c00; font-weight:700;">+38 067 740 2860</a></p>
+        </div>
+    </div>
+
+    <h2 class="section-title" id="brendy">🏆 Наші бренди</h2>
+    <div class="brands-grid">
         <a href="https://sturmax.com.ua" target="_blank" class="brand-item brand-sturmax">STURMAX</a>
         <a href="https://yato24.com.ua/ua/" target="_blank" class="brand-item brand-yato">YATO</a>
         <a href="https://vitals.ua" target="_blank" class="brand-item brand-vitals">VITALS</a>
@@ -977,144 +440,140 @@
         <a href="https://budpostach.ua" target="_blank" class="brand-item brand-werk">WERK</a>
         <a href="https://haisser.com.ua" target="_blank" class="brand-item brand-haisser">HAISSER</a>
         <a href="https://epi.com.ua/" target="_blank" class="brand-item brand-oleomac">OLEO-MAC</a>
+        <a href="https://sturm.ua" target="_blank" class="brand-item brand-sturm">STURM</a>
+        <a href="https://sigma.ua" target="_blank" class="brand-item brand-sigma">SIGMA</a>
+        <a href="https://worcraft.com.ua/ua" target="_blank" class="brand-item brand-worcraft">WORCRAFT</a>
+        <a href="https://machtz.com.ua/ua" target="_blank" class="brand-item brand-machtz">MACHTZ</a>
+        <a href="https://ingco.ua" target="_blank" class="brand-item brand-ingco">INGCO</a>
+        <a href="https://kentavr.ua" target="_blank" class="brand-item brand-kentavr">КЕНТАВР</a>
     </div>
 
-    <!-- ФОТО МАГАЗИНУ -->
     <h2 class="section-title">📸 Наш магазин</h2>
     <div class="photos-grid">
         <img src="foto3.jpg" alt="Магазин">
         <img src="foto1.jpg" alt="Магазин">
         <img src="foto2.jpg" alt="Магазин">
-    <img src="foto8.jpg" alt="Магазин">
-        </div>
+        <img src="foto8.jpg" alt="Магазин">
+    </div>
 
-        <!-- ГАРЯЧІ ПРОПОЗИЦІЇ -->
-        <div class="hot-block" id="aktsii">
-            <h2>🔥 Гарячі пропозиції</h2>
-            <p>Актуальні акції та пропозиції нашого магазину!</p>
-            <div class="posters-grid">
-                <div class="poster-item">
-                    <img src="foto11.jpg" alt="Акція" onclick="openImg(this.src)">
-                </div>
-                <div class="poster-item">
-                    <img src="foto12.jpg" alt="Акція" onclick="openImg(this.src)">
-                </div>
+    <div class="hot-block" id="aktsii">
+        <h2>🔥 Гарячі пропозиції</h2>
+        <p>Актуальні акції та пропозиції нашого магазину!</p>
+        <div class="posters-grid">
+            <div class="poster-item">
+                <img src="foto11.jpg" alt="Акція" onclick="openImg(this.src)">
             </div>
-            <p style="color:#aaa;">Більше пропозицій у наших соцмережах:</p>
-            <div class="social-btns">
-                <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
-                <a href="https://www.facebook.com/FineGospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
+            <div class="poster-item">
+                <img src="foto12.jpg" alt="Акція" onclick="openImg(this.src)">
             </div>
         </div>
-
-        <!-- КОНТАКТИ -->
-        <div class="contacts" id="kontakty">
-            <h2>📞 Контакти</h2>
-            <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
-            <p>🕐 Графік роботи:</p>
-            <p>Пн - Пт: 8:30 - 17:00</p>
-            <p>Субота: 8:30 - 15:00</p>
-            <p>Неділя: вихідний</p>
-            <div class="btn-wrap">
-                <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
-                <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
-                <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
-            </div>
+        <p style="color:#aaa;">Більше пропозицій у наших соцмережах:</p>
+        <div class="social-btns">
+            <a href="https://www.tiktok.com/@finegospodar" target="_blank" class="btn-tiktok">🎵 TikTok</a>
+            <a href="https://www.facebook.com/FineGospodar" target="_blank" class="btn-facebook">📘 Facebook</a>
         </div>
+    </div>
 
-        <!-- АДРЕСА -->
-        <div class="address-block">
-            <h3>📍 Наша адреса</h3>
-            <p>м. Самбір, вул. Івана Франка 89</p>
-            <p class="territory">Територія Спецбази</p>
+    <div class="contacts" id="kontakty">
+        <h2>📞 Контакти</h2>
+        <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
+        <p>🕐 Графік роботи:</p>
+        <p>Пн - Пт: 8:30 - 17:00</p>
+        <p>Субота: 8:30 - 15:00</p>
+        <p>Неділя: вихідний</p>
+        <div class="btn-wrap">
+            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
+            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+            <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
         </div>
-<!-- КАРТА -->
-<h2 class="section-title">🗺️ Як нас знайти</h2>
-<div class="map-container" style="position:relative;">
-    <iframe
-        src="https://www.google.com/maps?q=вул.+Івана+Франка+89,+Самбір,+Львівська+область&output=embed"
-        width="100%"
-        height="400"
-        style="border:0; pointer-events:none;"
-        allowfullscreen=""
-        loading="lazy">
-    </iframe>
-    <a href="https://www.google.com/maps/search/?api=1&query=вул.+Івана+Франка+89,+Самбір,+Львівська+область"
-       target="_blank"
-       style="position:absolute; bottom:15px; right:15px; background:#ff8c00; color:#1a1a1a; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:700; font-size:0.9em; box-shadow:0 4px 15px rgba(0,0,0,0.4);">
-       📍 Відкрити в Google Maps
-    </a>
+    </div>
+
+    <div class="address-block">
+        <h3>📍 Наша адреса</h3>
+        <p>м. Самбір, вул. Івана Франка 89</p>
+        <p class="territory">Територія Спецбази</p>
+    </div>
+
+    <h2 class="section-title">🗺️ Як нас знайти</h2>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps?q=вул.+Івана+Франка+89,+Самбір,+Львівська+область&output=embed"
+            width="100%" height="400" style="border:0; pointer-events:none;"
+            allowfullscreen="" loading="lazy">
+        </iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=вул.+Івана+Франка+89,+Самбір,+Львівська+область"
+           target="_blank"
+           style="position:absolute; bottom:15px; right:15px; background:#ff8c00; color:#1a1a1a; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:700; font-size:0.9em; box-shadow:0 4px 15px rgba(0,0,0,0.4);">
+           📍 Відкрити в Google Maps
+        </a>
+    </div>
+
 </div>
-       
 
-    </div>
+<footer>
+    <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
+</footer>
 
-    <footer>
-        <p>© 2026 <span>Файний Господар</span> • Самбір • вул. Івана Франка 89</p>
-    </footer>
+<div style="position:fixed; bottom:30px; right:30px; z-index:9998; display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
+    <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(255,140,0,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📞</a>
+    <a href="viber://chat?number=%2B380964502734" style="background:#7360f2; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(115,96,242,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">💬</a>
+    <a href="https://wa.me/380931616926" target="_blank" style="background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(37,211,102,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📱</a>
+</div>
 
-    <!-- ПЛАВАЮЧІ КНОПКИ -->
-    <div style="position:fixed; bottom:30px; right:30px; z-index:9998; display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
-        <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(255,140,0,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📞</a>
-        <a href="viber://chat?number=%2B380964502734" style="background:#7360f2; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(115,96,242,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">💬</a>
-        <a href="https://wa.me/380931616926" target="_blank" style="background:#25d366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6em; box-shadow:0 4px 20px rgba(37,211,102,0.6); text-decoration:none; transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">📱</a>
-    </div>
+<div id="imgModal" onclick="closeImg()">
+    <img id="modalImg" src="" alt="Акція">
+</div>
 
-    <!-- МОДАЛЬНЕ ВІКНО -->
-    <div id="imgModal" onclick="closeImg()">
-        <img id="modalImg" src="" alt="Акція">
-    </div>
-
-    <script>
-    function toggleList(card) {
-        const list = card.querySelector('.card-list');
-        const toggle = card.querySelector('.card-toggle');
-        list.classList.toggle('open');
-        toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
+<script>
+function toggleList(card) {
+    const list = card.querySelector('.card-list');
+    const toggle = card.querySelector('.card-toggle');
+    list.classList.toggle('open');
+    toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
+}
+function openImg(src) {
+    document.getElementById('modalImg').src = src;
+    document.getElementById('imgModal').style.display = 'flex';
+}
+function closeImg() {
+    document.getElementById('imgModal').style.display = 'none';
+}
+function toggleMenu() {
+    document.getElementById('navMobile').classList.toggle('open');
+}
+const texts = [
+    "Інструмент для професіоналів",
+    "Ремонт бензотехніки",
+    "Прокат будівельного обладнання",
+    "Якісні бренди — доступні ціни",
+    "Самбір • вул. Івана Франка 89"
+];
+let textIndex = 0;
+setInterval(() => {
+    textIndex = (textIndex + 1) % texts.length;
+    const el = document.getElementById('rotatingText');
+    el.style.opacity = '0';
+    setTimeout(() => {
+        el.textContent = texts[textIndex];
+        el.style.opacity = '1';
+        el.style.transition = 'opacity 0.5s';
+    }, 300);
+}, 3000);
+function createSparks() {
+    const container = document.getElementById('sparks');
+    if (!container) return;
+    for (let i = 0; i < 15; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        spark.style.left = Math.random() * 100 + '%';
+        spark.style.top = Math.random() * 100 + '%';
+        spark.style.animationDelay = Math.random() * 3 + 's';
+        spark.style.animationDuration = (2 + Math.random() * 2) + 's';
+        container.appendChild(spark);
     }
-    function openImg(src) {
-        document.getElementById('modalImg').src = src;
-        document.getElementById('imgModal').style.display = 'flex';
-    }
-    function closeImg() {
-        document.getElementById('imgModal').style.display = 'none';
-    }
-    function toggleMenu() {
-        document.getElementById('navMobile').classList.toggle('open');
-    }
-    const texts = [
-        "Інструмент для професіоналів",
-        "Ремонт бензотехніки",
-        "Прокат будівельного обладнання",
-        "Якісні бренди — доступні ціни",
-        "Самбір • вул. Івана Франка 89"
-    ];
-    let textIndex = 0;
-    setInterval(() => {
-        textIndex = (textIndex + 1) % texts.length;
-        const el = document.getElementById('rotatingText');
-        el.style.opacity = '0';
-        setTimeout(() => {
-            el.textContent = texts[textIndex];
-            el.style.opacity = '1';
-            el.style.transition = 'opacity 0.5s';
-        }, 300);
-    }, 3000);
-    function createSparks() {
-        const container = document.getElementById('sparks');
-        if (!container) return;
-        for (let i = 0; i < 15; i++) {
-            const spark = document.createElement('div');
-            spark.className = 'spark';
-            spark.style.left = Math.random() * 100 + '%';
-            spark.style.top = Math.random() * 100 + '%';
-            spark.style.animationDelay = Math.random() * 3 + 's';
-            spark.style.animationDuration = (2 + Math.random() * 2) + 's';
-            container.appendChild(spark);
-        }
-    }
-    createSparks();
-    </script>
+}
+createSparks();
+</script>
 
-    </body>
-    </html>    
+</body>
+</html>
