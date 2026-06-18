@@ -26,17 +26,8 @@
             100% { transform: translateY(-100px) scale(0); opacity: 0; }
         }
 
-        nav {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: rgba(20,20,20,0.97);
-            border-bottom: 2px solid #ff8c00;
-            z-index: 9000; padding: 0 20px;
-        }
-        .nav-inner {
-            max-width: 960px; margin: 0 auto;
-            display: flex; align-items: center;
-            justify-content: space-between; height: 55px;
-        }
+        nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(20,20,20,0.97); border-bottom: 2px solid #ff8c00; z-index: 9000; padding: 0 20px; }
+        .nav-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 55px; }
         .nav-logo { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; font-size: 1.3em; letter-spacing: 2px; text-decoration: none; }
         .nav-links { display: flex; gap: 5px; list-style: none; }
         .nav-links a { color: #ddd; text-decoration: none; font-size: 0.8em; font-weight: 600; letter-spacing: 1px; padding: 6px 10px; border-radius: 4px; transition: all 0.2s; text-transform: uppercase; }
@@ -47,17 +38,8 @@
         .nav-mobile a:hover { color: #ff8c00; }
         .nav-mobile.open { display: flex; }
 
-        header {
-            position: relative; padding: 80px 20px 60px; text-align: center;
-            overflow: hidden; min-height: 420px;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            margin-top: 55px;
-        }
-        .header-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('logo.jpg'); background-size: cover; background-position: center;
-            filter: blur(8px) brightness(0.25); transform: scale(1.1); z-index: 0;
-        }
+        header { position: relative; padding: 80px 20px 60px; text-align: center; overflow: hidden; min-height: 420px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 55px; }
+        .header-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('logo.jpg'); background-size: cover; background-position: center; filter: blur(8px) brightness(0.25); transform: scale(1.1); z-index: 0; }
         .sparks { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; overflow: hidden; }
         .spark { position: absolute; width: 4px; height: 4px; background: #ff8c00; border-radius: 50%; animation: spark 3s infinite; opacity: 0; }
         .header-content { position: relative; z-index: 1; }
@@ -382,34 +364,34 @@
     <h2 class="section-title" style="margin-top:50px;">⚙️ Наш інструмент</h2>
     <div class="tools-grid">
         <div class="tool-card">
-            <img src="foto7.png" alt="Бензопили">
+            <img src="tool1.png" alt="Бензопили">
             <p>🪚 Бензопили</p>
             <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OLEO-MAC • GARTNER • ЗЕНІТ</span>
         </div>
         <div class="tool-card">
-            <img src="foto6.jpg" alt="Мотокоси та тримери">
+            <img src="tool2.png" alt="Мотокоси та тримери">
             <p>🌿 Мотокоси та тримери</p>
             <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">GARTNER • ЗЕНІТ • OLEO-MAC</span>
         </div>
         <div class="tool-card">
-            <img src="foto4.png" alt="Електроінструмент">
-            <p>⚡ Електроінструмент</p>
-            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">YATO • TEKHMAN • STURM</span>
+            <img src="tool3.png" alt="Газонокосарки">
+            <p>🌿 Газонокосарки</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">GRUNHELM • GARTNER</span>
         </div>
         <div class="tool-card">
-            <img src="foto5.png" alt="Витратні матеріали">
-            <p>🔩 Витратні матеріали</p>
-            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OREGON • WINZOR • STIHL</span>
+            <img src="tool4.png" alt="Мийки високого тиску">
+            <p>💧 Мийки високого тиску</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">STURM • TEKHMAN</span>
         </div>
         <div class="tool-card">
-            <img src="foto27.png" alt="Компресори та генератори">
+            <img src="tool5.png" alt="Компресори та генератори">
             <p>💨 Компресори та генератори</p>
-            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">WERK • FORTE • VITALS</span>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">GRAD • WERK • FORTE</span>
         </div>
         <div class="tool-card">
             <img src="foto26.png" alt="Мийки високого тиску">
-            <p>💧 Мийки високого тиску</p>
-            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OLEO-MAC • GARTNER • TEKHMAN</span>
+            <p>💧 Мийки Oleo-Mac</p>
+            <span style="color:#aaa; font-size:0.8em; padding:0 10px 8px; display:block; text-align:center;">OLEO-MAC • GARTNER</span>
         </div>
     </div>
 
