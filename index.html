@@ -9,22 +9,10 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Montserrat', sans-serif; background: #1a1a1a; color: #fff; }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(255,140,0,0.4); }
-            50% { box-shadow: 0 0 40px rgba(255,140,0,0.9); }
-        }
-        @keyframes spark {
-            0% { transform: translateY(0) scale(1); opacity: 1; }
-            100% { transform: translateY(-100px) scale(0); opacity: 0; }
-        }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 0 20px rgba(255,140,0,0.4); } 50% { box-shadow: 0 0 40px rgba(255,140,0,0.9); } }
+        @keyframes spark { 0% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(-100px) scale(0); opacity: 0; } }
 
         nav { position: fixed; top: 0; left: 0; width: 100%; background: rgba(20,20,20,0.97); border-bottom: 2px solid #ff8c00; z-index: 9000; padding: 0 20px; }
         .nav-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 55px; }
@@ -69,23 +57,22 @@
         .why-item p { color: #aaa; font-size: 0.85em; line-height: 1.6; }
 
         .cards { display: flex; gap: 15px; flex-wrap: wrap; }
-        .card { position: relative; border-radius: 10px; padding: 20px 15px; flex: 1; min-width: 180px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; min-height: 200px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; cursor: pointer; }
+        .card { position: relative; border-radius: 10px; padding: 20px 15px; flex: 1; min-width: 180px; overflow: visible; transition: transform 0.2s, box-shadow 0.2s; min-height: 200px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; cursor: pointer; z-index: 1; }
+        .card.open-card { z-index: 50; flex: 1 1 100%; max-width: 320px; }
         .card-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: blur(3px) brightness(0.35); transform: scale(1.05); z-index: 0; }
         .card-content { position: relative; z-index: 1; width: 100%; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255,140,0,0.4); }
         .card h3 { font-family: 'Bebas Neue', sans-serif; color: #ff8c00; margin-bottom: 8px; font-size: 1.2em; letter-spacing: 1px; line-height: 1.3; text-align: center; }
         .card p { color: #ddd; font-size: 0.85em; line-height: 1.5; }
-        .card-list { display: none; margin-top: 15px; text-align: left; width: 100%; border-top: 1px solid #ff8c00; padding-top: 12px; }
+        .card-list { display: none; margin-top: 15px; text-align: left; width: 100%; border-top: 1px solid #ff8c00; padding-top: 12px; background: #2d2d2d; border-radius: 8px; padding: 12px; position: relative; z-index: 10; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
         .card-list.open { display: block; }
         .card-list ul { list-style: none; padding: 0; }
         .card-list ul li { padding: 6px 0; color: #fff; font-size: 0.9em; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 8px; }
         .card-list ul li:last-child { border-bottom: none; }
         .card-list ul li span { color: #ff8c00; font-size: 1.1em; }
         .card-toggle { display: inline-block; margin-top: 10px; color: #ff8c00; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; }
-.card-list ul li img { display: block; max-width: 100%; }
-.card-list ul li > div { flex-wrap: wrap; gap: 6px; }
-.card-list ul li > div span:first-child { font-size: 0.85em; }
-.card.open-card { z-index: 50; }
+        .card-list ul li img { display: block; max-width: 100%; }
+
         .delivery-block { background: linear-gradient(135deg, #1a2d1a, #1a1a1a); border: 2px solid #25d366; border-radius: 12px; padding: 15px; margin-top: 15px; box-shadow: 0 0 15px rgba(37,211,102,0.15); display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
         .delivery-block img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
         .delivery-info { flex: 1; min-width: 150px; }
@@ -96,12 +83,6 @@
         .btn-delivery-call:hover { background: #1da851; }
         .btn-delivery-fb { background: #1877f2; color: white; padding: 6px 14px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.8em; transition: background 0.2s; }
         .btn-delivery-fb:hover { background: #0d5ab8; }
-
-        .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 50px; }
-        .tool-card { background: #2d2d2d; border-radius: 8px; overflow: hidden; border: 1px solid #444; transition: transform 0.2s; }
-        .tool-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,140,0,0.2); }
-        .tool-card img { width: 100%; height: 160px; object-fit: cover; }
-        .tool-card p { padding: 10px 10px 4px; text-align: center; color: #ff8c00; font-family: 'Bebas Neue', sans-serif; font-size: 1em; letter-spacing: 1px; }
 
         .repair-block { position: relative; overflow: hidden; background: linear-gradient(135deg, #2d1a00, #1a1100); border: 2px solid #ff8c00; border-radius: 12px; padding: 40px 30px; margin-bottom: 50px; text-align: center; box-shadow: 0 0 30px rgba(255,140,0,0.2); }
         .repair-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('foto17.png'); background-size: cover; background-position: center; filter: blur(4px) brightness(0.2); transform: scale(1.05); z-index: 0; }
@@ -176,11 +157,11 @@
         @media (max-width: 768px) {
             .header-title-line2 { font-size: 4em; }
             .header-title-line3 { font-size: 2.5em; }
-            .tools-grid { grid-template-columns: repeat(2, 1fr); }
             .nav-links { display: none; }
             .nav-burger { display: block; }
             .why-grid { grid-template-columns: repeat(2, 1fr); }
             .repair-content h2 { font-size: 1.6em; }
+            .card.open-card { max-width: 100%; }
         }
         @media (max-width: 480px) {
             .why-grid { grid-template-columns: 1fr; }
@@ -363,27 +344,44 @@
             </div>
         </div>
     </div>
-<h2 class="section-title" style="margin-top:50px;">⚙️ Наш інструмент</h2>
+
+    <h2 class="section-title" style="margin-top:50px;">⚙️ Наші найкращі пропозиції</h2>
     <div class="cards" style="margin-bottom:50px;">
         <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto7.png')"></div>
             <div class="card-content">
-                <h3>🪚 Бензопили</h3>
+                <h3>🪚 Бензопили та електропили</h3>
                 <p>Топ моделі в наявності</p>
                 <span class="card-toggle">▼ Детальніше</span>
                 <div class="card-list">
-                    <ul>
-                        <li><span>🪚</span> ЗЕНІТ БПЛ-455/2600 профі</li>
-                        <li><span>🪚</span> OLEO-MAC 937</li>
-                        <li><span>🪚</span> TEKHMAN CSG-2045</li>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="border-bottom:1px solid #333; padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">🪚 ЗЕНІТ БПЛ-455/2600 профі</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
+                        <li style="border-bottom:1px solid #333; padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">🪚 OLEO-MAC 937</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
+                        <li style="padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">🪚 TEKHMAN CSG-2045</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto6.jpg')"></div>
             <div class="card-content">
-                <h3>🌿 Мотокоси та тримери</h3>
+                <h3>🌿 Мотокоси, тримери та електротримери</h3>
                 <p>Топ моделі в наявності</p>
                 <span class="card-toggle">▼ Детальніше</span>
                 <div class="card-list">
@@ -403,30 +401,17 @@
                             </div>
                         </li>
                         <li style="padding:10px 0; display:block;">
-                            <img src="tool5.png" alt="OLEO-MAC" style="width:100%; height:120px; object-fit:contain; border-radius:6px; margin-bottom:8px; display:block;">
+                            <img src="tool5.png" alt="OLEO-MAC Sparta 25" style="width:100%; height:120px; object-fit:contain; border-radius:6px; margin-bottom:8px; display:block;">
                             <div style="text-align:center;">
                                 <div style="color:#fff; font-size:0.85em; margin-bottom:6px;">🌿 OLEO-MAC Sparta 25</div>
                                 <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
-                            </div>
-                        </li>
-                        <li style="border-bottom:1px solid #333; padding:10px 0;">
-                            <img src="tool4.png" alt="FORTE MK 152" style="width:100%; max-height:140px; object-fit:contain; border-radius:6px; margin-bottom:8px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span><span style="color:#ff8c00;">🌿</span> FORTE MK 152</span>
-                                <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; padding:4px 12px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
-                            </div>
-                        </li>
-                        <li style="padding:10px 0;">
-                            <img src="tool5.png" alt="OLEO-MAC" style="width:100%; max-height:140px; object-fit:contain; border-radius:6px; margin-bottom:8px;">
-                            <div style="display:flex; justify-content:space-between; align-items:center;">
-                                <span><span style="color:#ff8c00;">🌿</span> OLEO-MAC Sparta 25</span>
-                                <a href="tel:+380964502734" style="background:#ff8c00; color:#1a1a1a; padding:4px 12px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto2.png')"></div>
             <div class="card-content">
@@ -434,13 +419,26 @@
                 <p>Топ моделі в наявності</p>
                 <span class="card-toggle">▼ Детальніше</span>
                 <div class="card-list">
-                    <ul>
-                        <li><span>🌿</span> GRUNHELM S531VHY</li>
-                        <li><span>🌿</span> GRUNHELM S461VHY</li>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="border-bottom:1px solid #333; padding:10px 0; display:block;">
+                            <img src="tool6.png" alt="GRUNHELM" style="width:100%; height:120px; object-fit:contain; border-radius:6px; margin-bottom:8px; display:block;">
+                            <div style="text-align:center;">
+                                <div style="color:#fff; font-size:0.85em; margin-bottom:6px;">🌿 GRUNHELM S531VHY</div>
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
+                        <li style="padding:10px 0; display:block;">
+                            <img src="tool7.png" alt="Енергомаш" style="width:100%; height:120px; object-fit:contain; border-radius:6px; margin-bottom:8px; display:block;">
+                            <div style="text-align:center;">
+                                <div style="color:#fff; font-size:0.85em; margin-bottom:6px;">🌿 Енергомаш</div>
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto4.png')"></div>
             <div class="card-content">
@@ -448,14 +446,24 @@
                 <p>Топ моделі в наявності</p>
                 <span class="card-toggle">▼ Детальніше</span>
                 <div class="card-list">
-                    <ul>
-                        <li><span>💧</span> STURM PW9202</li>
-                        <li><span>💧</span> TEKHMAN PWA-110/1400</li>
-                        <li><span>💧</span> OLEO-MAC PW150C</li>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="border-bottom:1px solid #333; padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">💧 STURM PW9202</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
+                        <li style="padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">💧 TEKHMAN PWA-110/1400</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <div class="card" onclick="toggleList(this)">
             <div class="card-bg" style="background-image:url('foto5.png')"></div>
             <div class="card-content">
@@ -463,16 +471,30 @@
                 <p>Топ моделі в наявності</p>
                 <span class="card-toggle">▼ Детальніше</span>
                 <div class="card-list">
-                    <ul>
-                        <li><span>💨</span> GRAD ремінний 100л</li>
-                        <li><span>💨</span> WERK BMW-50 50л</li>
-                        <li><span>⚡</span> FORTE FG3500 генератор</li>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="border-bottom:1px solid #333; padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">💨 GRAD ремінний 100л</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
+                        <li style="border-bottom:1px solid #333; padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">💨 WERK BMW-50 50л</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
+                        <li style="padding:10px 0; display:block;">
+                            <div style="color:#fff; font-size:0.85em; margin-bottom:6px; text-align:center;">⚡ FORTE FG3500 генератор</div>
+                            <div style="text-align:center;">
+                                <a href="tel:+380964502734" style="display:inline-block; background:#ff8c00; color:#1a1a1a; padding:6px 16px; border-radius:15px; text-decoration:none; font-size:0.8em; font-weight:700;">Дізнатись ціну</a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-   
 
     <div class="repair-block" id="remont">
         <div class="repair-bg"></div>
@@ -590,6 +612,7 @@ function toggleList(card) {
     const list = card.querySelector('.card-list');
     const toggle = card.querySelector('.card-toggle');
     list.classList.toggle('open');
+    card.classList.toggle('open-card');
     toggle.textContent = list.classList.contains('open') ? '▲ Згорнути' : '▼ Детальніше';
 }
 function openImg(src) {
