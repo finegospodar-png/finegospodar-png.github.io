@@ -723,6 +723,34 @@
     <div class="contacts" id="kontakty">
         <h2>📞 Контакти</h2>
         <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
+       <div id="workStatus" style="display:inline-block; padding:8px 20px; border-radius:20px; font-weight:700; font-size:0.95em; margin-bottom:15px; letter-spacing:1px;"></div>
+
+<script>
+(function() {
+    var now = new Date();
+    var day = now.getDay(); // 0=нд, 1=пн ... 6=сб
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var time = h * 60 + m;
+    var open = false;
+
+    if (day >= 1 && day <= 5 && time >= 510 && time < 1020) open = true; // пн-пт 8:30-17:00
+    if (day === 6 && time >= 510 && time < 900) open = true; // сб 8:30-15:00
+
+    var el = document.getElementById('workStatus');
+    if (open) {
+        el.textContent = '🟢 Зараз працюємо';
+        el.style.background = 'rgba(37,211,102,0.15)';
+        el.style.border = '2px solid #25d366';
+        el.style.color = '#25d366';
+    } else {
+        el.textContent = '🔴 Зараз зачинено';
+        el.style.background = 'rgba(255,50,50,0.15)';
+        el.style.border = '2px solid #ff3333';
+        el.style.color = '#ff3333';
+    }
+})();
+</script>
         <p>🕐 Графік роботи:</p>
         <p>Пн - Пт: 8:30 - 17:00</p>
         <p>Субота: 8:30 - 15:00</p>
