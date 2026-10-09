@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://finegospodar-png.github.io/sitemap.xml
