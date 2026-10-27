@@ -808,17 +808,29 @@
         <p>📱 Телефон: <a href="tel:+380964502734">+38 096 450 2734</a></p>
        <div id="workStatus" style="display:inline-block; padding:8px 20px; border-radius:20px; font-weight:700; font-size:0.95em; margin-bottom:15px; letter-spacing:1px;"></div>
 
+
+        <p>🕐 Графік роботи:</p>
+        <p>Пн - Пт: 8:30 - 17:00</p>
+        <p>Субота: 8:30 - 15:00</p>
+        <p>Неділя: вихідний</p>
+        <div class="btn-wrap">
+            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
+            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
+            <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+        </div>
+    </div>
 <script>
 (function() {
-    var now = new Date();
-    var day = now.getDay(); // 0=нд, 1=пн ... 6=сб
-    var h = now.getHours();
-    var m = now.getMinutes();
-    var time = h * 60 + m;
+    var parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Kyiv', weekday: 'short',
+        hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+    }).formatToParts(new Date());
+    var get = function(t) { return parts.find(function(p) { return p.type === t; }).value; };
+    var wd = get('weekday');
+    var time = parseInt(get('hour'), 10) * 60 + parseInt(get('minute'), 10);
     var open = false;
-
-    if (day >= 1 && day <= 5 && time >= 510 && time < 1020) open = true; // пн-пт 8:30-17:00
-    if (day === 6 && time >= 510 && time < 900) open = true; // сб 8:30-15:00
+    if (['Mon','Tue','Wed','Thu','Fri'].indexOf(wd) !== -1 && time >= 510 && time < 1020) open = true;
+    if (wd === 'Sat' && time >= 510 && time < 900) open = true;
 
     var el = document.getElementById('workStatus');
     if (open) {
@@ -834,17 +846,6 @@
     }
 })();
 </script>
-        <p>🕐 Графік роботи:</p>
-        <p>Пн - Пт: 8:30 - 17:00</p>
-        <p>Субота: 8:30 - 15:00</p>
-        <p>Неділя: вихідний</p>
-        <div class="btn-wrap">
-            <a href="tel:+380964502734" class="btn-call">📞 Зателефонувати</a>
-            <a href="viber://chat?number=%2B380964502734" class="btn-viber">💬 Viber</a>
-            <a href="https://wa.me/380931616926" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
-        </div>
-    </div>
-
     <div class="address-block">
         <h3>📍 Наша адреса</h3>
         <p>м. Самбір, вул. Івана Франка 89</p>
